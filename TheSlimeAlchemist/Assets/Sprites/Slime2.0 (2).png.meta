@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8dc627527378e4f78ab41594a4d99bc3
+guid: d0b26c9104abc441c96c6178f1764807
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slime2.0 (1)_0
+      name: Slime2.0 (2)_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 653
-        width: 528
-        height: 530
+        x: 70
+        y: 559
+        width: 467
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bdca0724b0fb491cac031cf698fc51f
-      internalID: 1162270042
+      spriteID: 6959d279cdfa4473eae2e395c9a31045
+      internalID: -1076467976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime2.0 (1)_1
+      name: Slime2.0 (2)_1
       rect:
         serializedVersion: 2
-        x: 614
-        y: 653
-        width: 530
-        height: 530
+        x: 573
+        y: 559
+        width: 468
+        height: 467
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22218db1d8cd1485aae759dad5fd62b4
-      internalID: -1035262288
+      spriteID: 0d6d3d340b2054913944580f37dfde4e
+      internalID: 682512228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime2.0 (1)_2
+      name: Slime2.0 (2)_2
       rect:
         serializedVersion: 2
-        x: 1230
-        y: 209
-        width: 797
-        height: 797
+        x: 1146
+        y: 133
+        width: 715
+        height: 715
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a7fbcc55325741ac8d61c14b6420730
-      internalID: 409112919
+      spriteID: ecc7e385ebaa1481a994a8f89643ed7a
+      internalID: -1819016605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime2.0 (1)_3
+      name: Slime2.0 (2)_3
       rect:
         serializedVersion: 2
-        x: 45
-        y: 80
-        width: 528
-        height: 529
+        x: 70
+        y: 53
+        width: 467
+        height: 468
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e29e9709c5c964f80af2ab7863f0db8e
-      internalID: -1163469940
+      spriteID: 9b9756e1d1cd54a3aa154db9f748247c
+      internalID: -1543199755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime2.0 (1)_4
+      name: Slime2.0 (2)_4
       rect:
         serializedVersion: 2
-        x: 614
-        y: 72
-        width: 530
-        height: 529
+        x: 573
+        y: 53
+        width: 468
+        height: 468
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0703bb90ee22d411f85edd420d0850ac
-      internalID: -10510619
+      spriteID: 57005086e69a6466bafca2cee52cd031
+      internalID: 506467846
       vertices: []
       indices: 
       edges: []
@@ -225,11 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Slime2.0 (1)_0: 1162270042
-      Slime2.0 (1)_1: -1035262288
-      Slime2.0 (1)_2: 409112919
-      Slime2.0 (1)_3: -1163469940
-      Slime2.0 (1)_4: -10510619
+      Slime2.0 (2)_0: -1076467976
+      Slime2.0 (2)_1: 682512228
+      Slime2.0 (2)_2: -1819016605
+      Slime2.0 (2)_3: -1543199755
+      Slime2.0 (2)_4: 506467846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
