@@ -15,15 +15,23 @@ public class DisplayInventory : MonoBehaviour
     public int Y_START;
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
     // Start is called before the first frame update
+    private bool transparencyToggled = false;
+    private Image parentImage;
     void Start()
     {
         CreateDisplay();
+        parentImage = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     { 
         UpdateDisplay(); 
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            ToggleTransparency();
+        }
     }
 
     public void CreateDisplay(){
@@ -64,8 +72,33 @@ public class DisplayInventory : MonoBehaviour
                 itemImage.sprite = inventory.Container[i].item.icon;
                 }
                 itemsDisplayed.Add(inventory.Container[i], obj);
+                obj.SetActive(transparencyToggled);
             }
         }
 
+    }
+
+    private void ToggleTransparency()
+    {
+        transparencyToggled = !transparencyToggled;
+
+        if (parentImage != null)
+        {
+            // Toggle the transparency of the parent Image component
+            Color imageColor = parentImage.color;
+            imageColor.a = transparencyToggled ? 0.0f : 1.0f;
+            parentImage.color = imageColor;
+        }
+        
+        
+        foreach (var kvp in itemsDisplayed)
+        {
+            GameObject displayObject = kvp.Value;
+            if (displayObject != null)
+            {
+                // Toggle the visibility of the entire display
+                displayObject.SetActive(!transparencyToggled);
+            }
+        }
     }
 }
