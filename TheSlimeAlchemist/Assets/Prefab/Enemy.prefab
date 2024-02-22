@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3148902418070210252}
   - component: {fileID: 164614716770675922}
   - component: {fileID: 5141923134502170136}
-  - component: {fileID: 4823605345720867697}
+  - component: {fileID: 982074506256688447}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: EnemyLi
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4823605345720867697
+--- !u!114 &982074506256688447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3459439279638956475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479aec9729f3b48b5a5f78b657ae265a, type: 3}
+  m_Script: {fileID: 11500000, guid: a859191f4b9644d258f5c389dc6e818f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 4225618755798257358, guid: 9f8b1530f554f40fbae768ef4c86eb67, type: 3}
+  explosion: {fileID: 5858027289066792963, guid: 37829aafc53a848fcb38e8efb55f29d2, type: 3}
