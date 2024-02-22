@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 235f3cd072b1c4fd98f3c56af9406b7b, type: 3}
-  m_Name: H_1
+  m_Name: O_1
   m_EditorClassIdentifier: 
   id: 001
-  displayName: Hydrogen
-  icon: {fileID: -1076467976, guid: d0b26c9104abc441c96c6178f1764807, type: 3}
-  prefab: {fileID: 4087303082529960337, guid: 05f694497946d41a98d9558a3fc08d6e, type: 3}
+  displayName: Oxygen
+  icon: {fileID: 682512228, guid: d0b26c9104abc441c96c6178f1764807, type: 3}
+  prefab: {fileID: 7522030042281651572, guid: afc944e3fcf86474ebc2c2236e20b72d, type: 3}
   type: 0
   description: 
-  ability: None
+  ability: 
   price: 0
-  rarity: 0.999
+  rarity: 0
