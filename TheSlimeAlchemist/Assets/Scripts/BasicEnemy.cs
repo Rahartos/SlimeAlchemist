@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour
 {
-
+    public HealthBarScript healthBarScript;
     Rigidbody2D rb;
     public GameObject explosion;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +25,12 @@ public class BasicEnemy : MonoBehaviour
     {
         Debug.Log(collision.gameObject.name + "collided");
 
-        if (collision.gameObject.name == "Slime_Player")
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
+            healthBarScript.TakeDamage(20);
+          
         }
         
     }
