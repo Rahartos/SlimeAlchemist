@@ -52,6 +52,12 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     }
 
     public void Load(){
+        if(File.Exists(string.Concat(Application.persistentDataPath, savePath))){
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
+            JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
+            file.Close();
+        }
 
     }
 }
