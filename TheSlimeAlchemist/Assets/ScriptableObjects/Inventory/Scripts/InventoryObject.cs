@@ -10,10 +10,15 @@ using System.Runtime.Serialization;
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
-    public ItemDatabaseObject database;
+    private ItemDatabaseObject database;
     public ItemObject coins;
     public int coinAmount = 0;
     public List<InventorySlot> Container = new List<InventorySlot>();
+
+    private void OnEnable(){
+        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Scriptable Objects/Items/Database.asset", typeof(ItemDatabaseObject));
+
+    }
 
     public void AddCoinAmount(int value){
         coinAmount += value;

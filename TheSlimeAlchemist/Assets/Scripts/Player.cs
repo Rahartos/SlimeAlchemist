@@ -6,6 +6,13 @@ public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
 
+    private void Update(){
+
+        if(Input.GetKeyDown(KeyCode.S)){
+            inventory.Save();
+        }     
+    }
+
     public void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Item")){
             Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
