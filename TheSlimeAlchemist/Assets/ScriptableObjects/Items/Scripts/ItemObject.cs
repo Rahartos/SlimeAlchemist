@@ -10,7 +10,7 @@ public enum ItemType{
 
 [CreateAssetMenu(fileName = "default", menuName = "InventorySystem/Items/Default")]
 public abstract class ItemObject : ScriptableObject{
-    public string id;
+    public int ID;
     public string displayName;
     public Sprite icon;
     public GameObject prefab;
