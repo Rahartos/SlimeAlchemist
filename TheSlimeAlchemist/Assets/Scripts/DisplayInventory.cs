@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DisplayInventory : MonoBehaviour
 {
+    public GameObject inventoryPrefab;
     public InventoryObject inventory;
 
     public int X_SPACE_BETWEEN_ITEM;
