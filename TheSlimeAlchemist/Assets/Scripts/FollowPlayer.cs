@@ -1,17 +1,26 @@
 using UnityEngine;
 
-public class FollowPlayerCamera2D : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
-    public Transform targetPlayer;  // Reference to the player's Transform component
+    Transform targetPlayer;  // Reference to the player's Transform component
     public Vector3 offset;
 
-    void Start(){
+    Vector3 velocity = Vector3.zero;
+    [Range(0, 1)]
+    public float smoothTime;
 
+    public Vector2 xLimit;
+    public Vector2 yLimit;
+
+    public void Awake(){
+        targetPlayer = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
 
     void Update()
     {
-        transform.position = targetPlayer.position + offset;
+        Vector3 targetPosition = targetPlayer.position + offset;
+        targetPosition = new Vector3(Mathf.Clamp(targetPosition.x, xLimit.x, xLimit.y), Mathf.Clamp(targetPosition.y, yLimit.x, yLimit.y), -10);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 }
