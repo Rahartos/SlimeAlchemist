@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
         // playerAnimation = GetComponent<Animator>();
         gameLevelManager = GetComponent<LevelManager>();
 
+    }
+
 
          void OnTriggerEnter2D(Collider2D other) {
             if (other.gameObject.CompareTag("Item"))
@@ -69,5 +71,5 @@ public class Player : MonoBehaviour
             inventory.coinAmount = 10;
         }
 
-    }
+    
 }
