@@ -14,8 +14,10 @@ public class TutorialDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lines = new string[] {
-                                "Use the arrow keys to move and spacebar to jump",
+        lines = new string[] {   // add text here:
+                                "You are a slime in a petri dish!",
+                                "Use the arrow keys to move and spacebar to jump...",
+                                "... and the little flags are the respawning points!",
                                 "Collect your first slime!"
                              };
         dialogue.text = "Welcome to The Slime Alchemist!";

@@ -132,10 +132,10 @@ MonoBehaviour:
           m_StringArgument: StartScreen
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 299390939729758717, guid: 880d3361796e90d478e52a554c3a76da, type: 3}
+      - m_Target: {fileID: 11500000, guid: 8f1ca9ca47af41c47a320c3fb8461048, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 8657391c09bb51e4fb047537f83733d9, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
