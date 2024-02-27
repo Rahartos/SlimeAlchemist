@@ -15,9 +15,10 @@ MonoBehaviour:
   ID: 2
   displayName: Oxygen
   icon: {fileID: 682512228, guid: d0b26c9104abc441c96c6178f1764807, type: 3}
-  prefab: {fileID: 7522030042281651572, guid: afc944e3fcf86474ebc2c2236e20b72d, type: 3}
+  prefab: {fileID: 4087303082529960337, guid: 05f694497946d41a98d9558a3fc08d6e, type: 3}
   type: 0
   description: 
   ability: 
   price: 0
   rarity: 0
+  inParty: 0

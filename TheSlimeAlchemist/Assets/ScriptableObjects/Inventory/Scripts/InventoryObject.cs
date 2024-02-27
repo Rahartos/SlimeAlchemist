@@ -30,6 +30,25 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
    }
 
+   public void RemoveItem(ItemObject _item, int _amount)
+    {
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (Container[i].ID == _item.ID)
+            {
+                Container[i].RemoveAmount(_amount);
+
+                // If the amount becomes zero or less, remove the slot
+                if (Container[i].amount <= 0)
+                {
+                    Container.RemoveAt(i);
+                }
+
+                return;
+            }
+        }
+    }
+
    public void OnAfterDeserialize(){
         
         for (int i = 0; i < Container.Count; i++){
@@ -71,5 +90,10 @@ public class InventorySlot{
 
     public void AddAmount(int value){
         amount += value;
+    }
+
+    public void RemoveAmount(int value)
+    {
+        amount -= value;
     }   
 }

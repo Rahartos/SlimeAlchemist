@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
+    public InventoryObject partyinventory;
 
     // for respawning
     public Vector3 respawnPoint;
@@ -49,26 +50,27 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (other.gameObject.CompareTag("Enemy")) {
-                // if slime hits an enemy,
-                // 1. decrease health
-                // abc...
-                // 2. and if healthy reaches 0, respawn?
-                // if health < 0
-                gameLevelManager.Respawn();
+            // if (other.gameObject.CompareTag("Enemy")) {
+            //     // if slime hits an enemy,
+            //     // 1. decrease health
+            //     // abc...
+            //     // 2. and if healthy reaches 0, respawn?
+            //     // if health < 0
+            //     gameLevelManager.Respawn();
 
-            }
+            // }
 
-            if (other.gameObject.CompareTag("Checkpoint"))
-            {
-                respawnPoint = transform.position;
-            }
+            // if (other.gameObject.CompareTag("Checkpoint"))
+            // {
+            //     respawnPoint = transform.position;
+            // }
 
         }
 
         void OnApplicationQuit() {
             inventory.Container.Clear();
             inventory.coinAmount = 10;
+            partyinventory.Container.Clear();
         }
 
     
