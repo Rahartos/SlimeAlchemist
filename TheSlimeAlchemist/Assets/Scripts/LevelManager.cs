@@ -7,7 +7,10 @@ public class LevelManager : MonoBehaviour
 {
 
     public float respawnDelay;
-    public Player gamePlayer;
+
+    private Transform spawnPoint;
+    private Transform playerPos;
+
 
     public void OpenScene(string levelName)
     {
@@ -17,20 +20,20 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gamePlayer = gamePlayer.GetComponent<Player>();
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        spawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
     }
 
     public void Respawn()
     {
-        gamePlayer.gameObject.SetActive(false);
         // put player back into respawn point
-        gamePlayer.transform.position = gamePlayer.respawnPoint;
-        gamePlayer.gameObject.SetActive(true);
+        playerPos.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
     }
 
-    // Update is called once per frame
-    void Update()
+
+// Update is called once per frame
+void Update()
     {
-        
+                
     }
 }
