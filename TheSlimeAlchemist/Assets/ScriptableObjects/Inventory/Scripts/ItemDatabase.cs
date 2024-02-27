@@ -21,5 +21,16 @@ public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiv
     public void OnBeforeSerialize(){
 
     }
+
+    public void ResetInPartyValues()
+    {
+        foreach (var item in Items)
+        {
+            if (item != null)
+            {
+                item.inParty = false;
+            }
+        }
+    }
 }
 

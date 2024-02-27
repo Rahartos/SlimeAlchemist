@@ -19,16 +19,57 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         coinAmount += value;
     }
     public void AddItem(ItemObject _item, int _amount){
-        
         for(int i = 0; i < Container.Count; i++){
 
             if(Container[i].item == _item){
                 Container[i].AddAmount(_amount);
                 return;
             }
-        }    
-        Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
+            else{
+                
+            }
+            
+        }
+        Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));     
+        
    }
+
+   public void RemoveItem(ItemObject _item, int _amount)
+    {
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (Container[i].item.ID == _item.ID)
+            {
+                Debug.Log("Removing");
+                Debug.Log($"ItemID: {_item.ID}, Item: {_item}");
+                Container[i].RemoveAmount(_amount);
+
+                 Debug.Log($"Item Amount: {Container[i].amount}");
+
+                // If the amount becomes zero or less, remove the slot
+                if (Container[i].amount <= 0)
+                {
+                    Container.RemoveAt(i);
+                }
+
+                return;
+            }
+        }
+    }
+
+    public bool inInvent(ItemObject _item){
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (Container[i].item.ID == _item.ID)
+            {
+                return true;
+                
+            }
+        }
+
+        return false;
+
+    }
 
    public void OnAfterDeserialize(){
         
@@ -71,5 +112,10 @@ public class InventorySlot{
 
     public void AddAmount(int value){
         amount += value;
+    }
+
+    public void RemoveAmount(int value)
+    {
+        amount -= value;
     }   
 }
