@@ -154,69 +154,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &491182908 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1163298534855647479, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
-  m_PrefabInstance: {fileID: 6805766672640618724}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &491182911 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7555553125209424, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
   m_PrefabInstance: {fileID: 6805766672640618724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491182908}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &491182912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491182908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f51ea88ed8d10c45a88b5fe635afa3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 491182911}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 0.07075471, b: 0.07075471, a: 1}
-    key1: {r: 0.9066739, g: 1, b: 0.19339621, a: 1}
-    key2: {r: 0, g: 1, b: 0.06795335, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 27949
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  fill: {fileID: 595762281}
-  maxHealth: 100
-  currentHealth: 0
-  healthBar: {fileID: 491182912}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,9 +1535,77 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1388333602668241917, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388333602668241917, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388333602668241917, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4225618755798257358, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
       propertyPath: m_Name
       value: Slime_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: fill
+      value: 
+      objectReference: {fileID: 595762281}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 491182911}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.ctime1
+      value: 23901
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key0.b
+      value: 0.2216981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key0.g
+      value: 0.2216981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key1.b
+      value: 0.23113209
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key1.r
+      value: 0.9327875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key2.b
+      value: 0.15566039
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key2.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.key2.r
+      value: 0.44467315
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238271565336220787, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+      propertyPath: gradient.m_NumColorKeys
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6492514779519218452, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1639,14 +1655,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 267976553867896511, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1163298534855647479, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 491182912}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b41fec4ce9149608e3cd6958713d0a, type: 3}
 --- !u!4 &6805766672640618733 stripped
 Transform:
