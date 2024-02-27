@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gamePlayer = gamePlayer.GetComponent<Player>();
+        //gamePlayer = gamePlayer.GetComponent<Player>();
     }
 
     public void Respawn()
