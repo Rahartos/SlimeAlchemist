@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public InventoryObject inventory;
     public InventoryObject partyinventory;
 
+    public ItemDatabaseObject mainDatabase;
+
     // for respawning
     public Vector3 respawnPoint;
     public LevelManager gameLevelManager;
@@ -71,6 +73,8 @@ public class Player : MonoBehaviour
             inventory.Container.Clear();
             inventory.coinAmount = 10;
             partyinventory.Container.Clear();
+
+            mainDatabase.ResetInPartyValues();
         }
 
     

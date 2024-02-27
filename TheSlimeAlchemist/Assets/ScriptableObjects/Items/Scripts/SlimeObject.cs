@@ -9,7 +9,7 @@ public class SlimeObject : ItemObject
     public string ability;
     public int price;
     public float rarity;
-    public bool inParty;
+    //public bool inParty;
     // Start is called before the first frame update
     public void Awake(){
         type = ItemType.Slime;

@@ -17,7 +17,7 @@ public class DisplayInventory : MonoBehaviour
     public int Y_START;
     
     // Change the dictionary to be more flexible
-    Dictionary<int, GameObject> itemsDisplayed = new Dictionary<int, GameObject>();
+    static Dictionary<int, GameObject> itemsDisplayed = new Dictionary<int, GameObject>();
 
     private bool transparencyToggled = false;
     private Image parentImage;
@@ -36,13 +36,7 @@ public class DisplayInventory : MonoBehaviour
         {
             ToggleTransparency();
 
-            Debug.Log("Dictionary Contents:");
 
-        foreach (var kvp in itemsDisplayed)
-        {
-            Debug.Log($"Key: {kvp.Key}, Item: {kvp.Value}");
-        }
-        
         }
 
         
@@ -74,6 +68,8 @@ public class DisplayInventory : MonoBehaviour
 
     public void UpdateDisplay()
     {
+        //Debug.Log("Updating party Display");
+
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             if (itemsDisplayed.ContainsKey(inventory.Container[i].ID))
@@ -118,29 +114,59 @@ public class DisplayInventory : MonoBehaviour
         }
     }
 
-    public void AddToParty(SlimeObject _item)
-    {
-        if (_item != null && inventory.Container.Any(slot => slot.item == _item))
+    public void AddToParty(SlimeObject _item){
+
+    Debug.Log("Dictionary Contents:");
+
+        foreach (var kvp in itemsDisplayed)
         {
-            InventorySlot inventorySlot = inventory.Container.Find(slot => slot.item == _item);
-
-            if (!_item.inParty)
-            {
-                partyInventory.AddItem(_item, 1);
-                inventory.RemoveItem(_item, 1);
-                _item.inParty = true;
-            }
-            else
-            {
-                inventory.AddItem(_item, 1);
-                partyInventory.RemoveItem(_item, 1);
-                _item.inParty = false;
-            }
-
-            // Clear the dictionary
-            itemsDisplayed.Clear();
-            // Recreate the display
-            CreateDisplay();
+            Debug.Log($"Key: {kvp.Key}, Item: {kvp.Value}");
         }
-    }
+
+
+    if (_item != null && inventory.Container.Any(slot => slot.item == _item))
+    {
+        InventorySlot inventorySlot = inventory.Container.Find(slot => slot.item == _item);
+
+        // partyInventory.AddItem(_item, 1);
+        // inventory.RemoveItem(_item, 1);
+        // _item.inParty = true;
+        Debug.Log(inventory.inInvent(_item));
+
+        if (inventory.inInvent(_item))
+        {
+            inventory.RemoveItem(_item, 1);
+            partyInventory.AddItem(_item, 1);
+            _item.inParty = true;
+            itemsDisplayed.Remove(inventorySlot.ID);
+        } else if (partyInventory.inInvent(_item))
+        {
+            Debug.Log("InParty");
+
+            inventory.AddItem(_item, 1);
+            partyInventory.RemoveItem(_item, 1);
+            _item.inParty = false;
+        }
+
+        // Remove the item from the dictionary
+    
+        // Debug.Log items and keys from the dictionary
+        Debug.Log("Dictionary Contents:");
+
+        foreach (var kvp in itemsDisplayed)
+        {
+            Debug.Log($"Key: {kvp.Key}, Item: {kvp.Value}");
+        }
+        
+        // Recreate the display
+       // CreateDisplay();
+    }else if (_item != null && partyInventory.Container.Any(slot => slot.item == _item))
+    {
+        Debug.Log("InParty");
+
+        inventory.AddItem(_item, 1);
+        partyInventory.RemoveItem(_item, 1);
+        _item.inParty = false;
+        }
+}
 }
