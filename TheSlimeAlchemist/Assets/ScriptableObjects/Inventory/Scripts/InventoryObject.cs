@@ -24,12 +24,13 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
             if(Container[i].item == _item){
                 Container[i].AddAmount(_amount);
                 return;
-            }
-            else{
-                
-            }
-            
+            }       
         }
+
+        if (_item.hasBeenFound == false){
+            _item.hasBeenFound =true;
+        }
+        
         Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));     
         
    }

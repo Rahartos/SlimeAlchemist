@@ -128,26 +128,10 @@ public class DisplayInventory : MonoBehaviour
     {
         InventorySlot inventorySlot = inventory.Container.Find(slot => slot.item == _item);
 
-        // partyInventory.AddItem(_item, 1);
-        // inventory.RemoveItem(_item, 1);
-        // _item.inParty = true;
-        Debug.Log(inventory.inInvent(_item));
-
-        if (inventory.inInvent(_item))
-        {
-            inventory.RemoveItem(_item, 1);
-            partyInventory.AddItem(_item, 1);
-            _item.inParty = true;
-            itemsDisplayed.Remove(inventorySlot.ID);
-        } else if (partyInventory.inInvent(_item))
-        {
-            Debug.Log("InParty");
-
-            inventory.AddItem(_item, 1);
-            partyInventory.RemoveItem(_item, 1);
-            _item.inParty = false;
-        }
-
+        partyInventory.AddItem(_item, 1);
+        inventory.RemoveItem(_item, 1);
+        _item.inParty = true;
+        itemsDisplayed.Remove(inventorySlot.ID);
         // Remove the item from the dictionary
     
         // Debug.Log items and keys from the dictionary
