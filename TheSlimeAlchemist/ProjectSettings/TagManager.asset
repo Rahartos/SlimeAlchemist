@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnemyLi
+  - Item
+  - Enemy
+  - Coin
+  - LevelManager
   layers:
   - Default
   - TransparentFX
