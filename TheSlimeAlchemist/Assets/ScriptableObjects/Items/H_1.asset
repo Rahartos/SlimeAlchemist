@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235f3cd072b1c4fd98f3c56af9406b7b, type: 3}
   m_Name: H_1
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 1
   displayName: Hydrogen
-  icon: {fileID: -1076467976, guid: d0b26c9104abc441c96c6178f1764807, type: 3}
+  icon: {fileID: 227422505, guid: 89853e6e1f4d242859d6525aa0b04fef, type: 3}
   prefab: {fileID: 7522030042281651572, guid: afc944e3fcf86474ebc2c2236e20b72d, type: 3}
+  shopPrefab: {fileID: 878323521378064639, guid: 6e0183847826649ab9e56f9293fe421c, type: 3}
   type: 0
-  description: 
+  description: The most common and essential slime.
   inParty: 0
+  hasBeenFound: 1
+  price: 5
   ability: None
-  price: 0
   rarity: 0.999
