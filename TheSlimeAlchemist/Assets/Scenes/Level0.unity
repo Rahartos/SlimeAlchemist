@@ -217,11 +217,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 893303582881284270, guid: 5d4e8c7eb89bc45ba912460a2341c813, type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 893303582881284270, guid: 5d4e8c7eb89bc45ba912460a2341c813, type: 3}
       propertyPath: runVelocity
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 893303582881284270, guid: 5d4e8c7eb89bc45ba912460a2341c813, type: 3}
       propertyPath: deaccelerationMultiplier
@@ -1051,8 +1051,8 @@ Transform:
   m_GameObject: {fileID: 920745599}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0719, y: 0, z: 0}
+  m_LocalScale: {x: 0.99277097, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173179222}
