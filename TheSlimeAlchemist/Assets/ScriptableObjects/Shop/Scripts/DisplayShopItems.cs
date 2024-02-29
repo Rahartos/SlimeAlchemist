@@ -49,10 +49,14 @@ public class DisplayShopItems : MonoBehaviour
                 itemImage.sprite = nonEnabled;
 
             }
+
+            //if (!itemEnabled.ContainsKey(inventory.Container[i].ID)){
+                itemEnabled.Add(shopInventory.Container[i].ID, shopInventory.Container[i].item.hasBeenFound);
+            //}
             
 
-            // Use the item ID as the key
-            itemEnabled.Add(shopInventory.Container[i].ID, shopInventory.Container[i].item.hasBeenFound);
+            
+            
         }
     }
 
