@@ -14,7 +14,6 @@ public abstract class ItemObject : ScriptableObject{
     public string displayName;
     public Sprite icon;
     public GameObject prefab;
-
     public GameObject shopPrefab;
     public ItemType type;
     [TextArea(15,20)]
@@ -22,5 +21,6 @@ public abstract class ItemObject : ScriptableObject{
     public bool inParty = false;
 
     public bool hasBeenFound;
+    public int price;
 
 }
