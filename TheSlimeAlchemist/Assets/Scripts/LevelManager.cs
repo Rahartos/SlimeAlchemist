@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     private Transform spawnPoint;
     private Transform playerPos;
 
+    private Player player;
+
 
     public void OpenScene(string levelName)
     {
@@ -20,19 +22,11 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        //spawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
+       
     }
 
-    public void Respawn()
-    {
-        // put player back into respawn point
-        //playerPos.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z);
-    }
-
-
-// Update is called once per frame
-void Update()
+    // Update is called once per frame
+    void Update()
     {
                 
     }
