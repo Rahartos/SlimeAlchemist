@@ -9,15 +9,17 @@ public class HotAirBalloon : MonoBehaviour
 
     private bool isMovingUp = false;
 
+    public Transform balloon;
+
     void Update()
     {
         if (isMovingUp)
         {
             // Move the player upward
-            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+            balloon.Translate(Vector3.up * moveSpeed * Time.deltaTime);
 
             // Check if the player has reached the stop Y position
-            if (transform.position.y >= stopYPosition)
+            if (balloon.position.y >= stopYPosition)
             {
                 // Stop moving
                 isMovingUp = false;
@@ -26,7 +28,7 @@ public class HotAirBalloon : MonoBehaviour
     }
 
     // When the player collides with another object
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
