@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public Vector3 respawnPoint;
     public LevelManager gameLevelManager;
 
+    public string scene;
+
     void Start()
     {
         respawnPoint = transform.position;
@@ -52,15 +54,18 @@ public class Player : MonoBehaviour
                 }
             }
 
-            // if (other.gameObject.CompareTag("Enemy")) {
+             if (other.gameObject.CompareTag("ENEMY")) {
             //     // if slime hits an enemy,
             //     // 1. decrease health
             //     // abc...
             //     // 2. and if healthy reaches 0, respawn?
             //     // if health < 0
-            //     gameLevelManager.Respawn();
+            //gameLevelManager.Respawn();
+            
 
-            // }
+            //gameLevelManager.OpenScene(scene);
+
+             }
 
             // if (other.gameObject.CompareTag("Checkpoint"))
             // {
@@ -70,9 +75,9 @@ public class Player : MonoBehaviour
         }
 
         void OnApplicationQuit() {
-            inventory.Container.Clear();
+            //inventory.Container.Clear();
             inventory.coinAmount = 10;
-            partyinventory.Container.Clear();
+            //partyinventory.Container.Clear();
 
             mainDatabase.ResetInPartyValues();
         }

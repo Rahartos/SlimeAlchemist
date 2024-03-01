@@ -19,6 +19,7 @@ public class DisplayShopItems : MonoBehaviour
     public SlimeObject resetSlime;
     void Start()
     {
+        itemEnabled.Clear();
         CreateDisplay(); 
         //selectedSlime = resetSlime;
 
