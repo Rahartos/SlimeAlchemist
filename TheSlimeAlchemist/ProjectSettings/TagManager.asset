@@ -9,6 +9,7 @@ TagManager:
   - EnemyDespond
   - EnemyLi
   - ENEMY
+  - Door
   layers:
   - Default
   - TransparentFX

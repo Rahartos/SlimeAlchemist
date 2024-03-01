@@ -10,6 +10,7 @@ public class TutorialDialogue : MonoBehaviour
     private int currentLine = 0;
     private bool initalDialogue = false;
     private bool secondDialogue = false;
+    private bool lastDialogue = false;
 
 
     private string[] initialLines = {   "You are a slime in a petri dish!",
@@ -30,7 +31,7 @@ public class TutorialDialogue : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
-            // Debug.Log("Found player: " + player.name);
+            Debug.Log("Found player: " + player.name);
         }
         dialogue.text = "Welcome to The Slime Alchemist!";
         StartDialogue();
@@ -41,6 +42,7 @@ public class TutorialDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // First Dialogue
         if (Input.GetKeyDown(KeyCode.Z) && initalDialogue)
         {
             if (currentLine < initialLines.Length)
@@ -56,8 +58,10 @@ public class TutorialDialogue : MonoBehaviour
             }
         }
 
+        // Second Dialogue after meeting Oxygen
         if(player.GetComponent<Player>() != null && player.GetComponent<Player>().metOxy)
         {
+            Debug.Log("MetSlime!");
             MetSlime();
             dialogue.text = "You collected your first slime: Oxygen!";
             player.GetComponent<Player>().metOxy = false;
@@ -68,7 +72,7 @@ public class TutorialDialogue : MonoBehaviour
         {
             if (currentLine < metSlimeLines.Length)
             {
-                // Debug.Log("following texts...");
+                Debug.Log("following texts...");
                 dialogue.text = metSlimeLines[currentLine];
                 currentLine++;
             }
@@ -78,6 +82,22 @@ public class TutorialDialogue : MonoBehaviour
                 dialogue.text = "";
                 secondDialogue = false;
             }
+        }
+
+        // Last Dialogue after reaching door
+        if (player.GetComponent<Player>() != null && player.GetComponent<Player>().reachedDoor)
+        {
+            Debug.Log("Reached Door!");
+            ReachedDoor();
+            dialogue.text = "Press the Space bar to get to the next level!";
+            player.GetComponent<Player>().reachedDoor = false;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && lastDialogue)
+        {
+            // Go to next level
+            player.GetComponent<Player>().NextScene();
         }
     }
 
@@ -91,7 +111,13 @@ public class TutorialDialogue : MonoBehaviour
     {
         secondDialogue = true;
         currentLine = 0;
-        // Debug.Log("currentLine: " + currentLine + ", metSlimesLines: " + metSlimeLines.Length);
+        Debug.Log("currentLine: " + currentLine + ", metSlimesLines: " + metSlimeLines.Length);
+    }
+
+    public void ReachedDoor()
+    {
+        lastDialogue = true;
+        currentLine = 0;
     }
 }
 
