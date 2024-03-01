@@ -31,10 +31,10 @@ public class BasicEnemy : MonoBehaviour
         //Vector2 point = currentPoint.position - transform.position;
         if (currentPoint == pointA.transform)
         {
-            rb.velocity = new Vector2(-speed, 0);
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
         } else
         {
-            rb.velocity = new Vector2(speed, 0);
+            rb.velocity = new Vector2(speed, rb.velocity.y);
         }
 
         if(Vector2.Distance(transform.position, currentPoint.position) < 1f && currentPoint == pointA.transform)
