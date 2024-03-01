@@ -23,8 +23,11 @@ public class DisplayInventory : MonoBehaviour
     private static bool playInvOut;
     private Image parentImage;
 
+    public  PlayerObject currentPlayer;
+
     void Start()
     {
+        //...
         itemsDisplayed.Clear();
         transparencyToggled = true;
         playInvOut = false;
@@ -159,8 +162,16 @@ public class DisplayInventory : MonoBehaviour
             partyInventory.RemoveItem(_item, 1);
             _item.inParty = false;
             }
+        }else{
+            Debug.Log("CURRENT OUT STATUS: " + playInvOut);
+            Debug.Log("currentPlayer: " + currentPlayer);
+
+            //If the inventory is hidden, and if the player clicks on the slimes in the party
+            //there should swap out with the SLIME GUY playable character
+            if(_item != null){
+                //currentPlayer.playerAssign(_item);
+
+            }
         }
-
-
 }
 }
