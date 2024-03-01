@@ -41,3 +41,4 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 05f377528a9df4a2e8d00e05e15b4993, type: 2}
     amount: 10
     ID: 8
+  maxSlimes: 1000

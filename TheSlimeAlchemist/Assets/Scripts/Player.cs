@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     private GameObject levelManager;
     public string nextScene;
 
+    public string scene;
+
     void Start()
     {
         levelManager = GameObject.FindWithTag("GameController");
@@ -73,6 +75,7 @@ public class Player : MonoBehaviour
             }
         }
 
+<<<<<<< HEAD
         if (other.gameObject.CompareTag("ENEMY"))
         {
             touchedFire = true;
@@ -85,6 +88,20 @@ public class Player : MonoBehaviour
             respawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
             
         }
+=======
+             if (other.gameObject.CompareTag("ENEMY")) {
+            //     // if slime hits an enemy,
+            //     // 1. decrease health
+            //     // abc...
+            //     // 2. and if healthy reaches 0, respawn?
+            //     // if health < 0
+            //gameLevelManager.Respawn();
+            
+
+            //gameLevelManager.OpenScene(scene);
+
+             }
+>>>>>>> Rain5
 
         if (other.gameObject.CompareTag("Door"))
         {
@@ -93,6 +110,7 @@ public class Player : MonoBehaviour
 
         }
 
+<<<<<<< HEAD
     }
 
     void Respawn()
@@ -109,8 +127,12 @@ public class Player : MonoBehaviour
         void OnApplicationQuit()
         {
             inventory.Container.Clear();
+=======
+        void OnApplicationQuit() {
+            //inventory.Container.Clear();
+>>>>>>> Rain5
             inventory.coinAmount = 10;
-            partyinventory.Container.Clear();
+            //partyinventory.Container.Clear();
 
             mainDatabase.ResetInPartyValues();
         }

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class DestroyObjectAndChildren : MonoBehaviour
 {
+    //public DisplayInventory inv;
+
+    private bool canDie;
     public void DestroyObjectWithChildren()
     {
         // Destroy all children of the current GameObject

@@ -14,6 +14,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     public ItemObject coins;
     public int coinAmount = 0;
     public List<InventorySlot> Container = new List<InventorySlot>();
+    public int maxSlimes;
 
     public void AddCoinAmount(int value){
         coinAmount += value;
@@ -118,5 +119,6 @@ public class InventorySlot{
     public void RemoveAmount(int value)
     {
         amount -= value;
-    }   
+    }
+   
 }

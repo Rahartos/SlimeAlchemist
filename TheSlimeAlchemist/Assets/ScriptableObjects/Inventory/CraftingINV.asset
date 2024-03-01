@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dcd38bb7806d429fbb878c25a591cdf, type: 3}
-  m_Name: PartyInv
+  m_Name: CraftingINV
   m_EditorClassIdentifier: 
   savePath: 
-  database: {fileID: 11400000, guid: 6e4d8921966324bab8c287bf7ab440ff, type: 2}
-  coins: {fileID: 11400000, guid: e94efc528b97c4ca3b70ae9454506ed1, type: 2}
+  database: {fileID: 0}
+  coins: {fileID: 0}
   coinAmount: 0
   Container: []
-  maxSlimes: 1
+  maxSlimes: 5

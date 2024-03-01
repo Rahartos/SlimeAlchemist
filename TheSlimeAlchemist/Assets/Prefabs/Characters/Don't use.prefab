@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &428314210803118561
+--- !u!1 &4183715441366708077
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 127816267000743213}
-  - component: {fileID: 4579505419815608579}
+  - component: {fileID: 2838541852194611342}
+  - component: {fileID: 3758584331369185257}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
+  m_Name: GameObject
+  m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &127816267000743213
+--- !u!4 &2838541852194611342
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428314210803118561}
+  m_GameObject: {fileID: 4183715441366708077}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12285471, y: -0.14847636, z: -10}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7079635316492449769}
+  m_Father: {fileID: 6074944269381243021}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4579505419815608579
+--- !u!58 &3758584331369185257
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428314210803118561}
+  m_GameObject: {fileID: 4183715441366708077}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -64,10 +64,10 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.021722615}
+  m_Offset: {x: 0.0207901, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8475612
---- !u!1 &5653582463080123678
+  m_Radius: 4.0763474
+--- !u!1 &8255972085865942116
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,43 +75,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7079635316492449769}
-  - component: {fileID: 8086913723910087179}
-  - component: {fileID: 2238439691656830462}
-  - component: {fileID: 1380298165025116555}
-  - component: {fileID: 3004347448228435507}
-  - component: {fileID: 893303582881284270}
-  - component: {fileID: 800834074993384775}
+  - component: {fileID: 6074944269381243021}
+  - component: {fileID: 931175715016173876}
+  - component: {fileID: 3864618160608790652}
+  - component: {fileID: 2487708647598820216}
+  - component: {fileID: 2223997928596262490}
   m_Layer: 0
+<<<<<<<< HEAD:TheSlimeAlchemist/Assets/Prefabs/Characters/Don't use.prefab
   m_Name: Don't use
   m_TagString: Player
+========
+  m_Name: Pu
+  m_TagString: ENEMY
+>>>>>>>> Rain5:TheSlimeAlchemist/Assets/Prefabs/Characters/Pu.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7079635316492449769
+--- !u!4 &6074944269381243021
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5653582463080123678}
+  m_GameObject: {fileID: 8255972085865942116}
   serializedVersion: 2
+<<<<<<<< HEAD:TheSlimeAlchemist/Assets/Prefabs/Characters/Don't use.prefab
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.995429, y: -2.8003047, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+========
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23, y: 0.76, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+>>>>>>>> Rain5:TheSlimeAlchemist/Assets/Prefabs/Characters/Pu.prefab
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 127816267000743213}
+  - {fileID: 2838541852194611342}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8086913723910087179
+--- !u!212 &931175715016173876
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5653582463080123678}
+  m_GameObject: {fileID: 8255972085865942116}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -146,24 +155,51 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1076467976, guid: d0b26c9104abc441c96c6178f1764807, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -937004958, guid: 90a0d918fdd824c14af7d8b193a39780, type: 3}
+  m_Color: {r: 0.8252497, g: 1, b: 0.7783019, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.28, y: 5.3}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2238439691656830462
+--- !u!50 &3864618160608790652
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255972085865942116}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 2
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &2487708647598820216
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5653582463080123678}
+  m_GameObject: {fileID: 8255972085865942116}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -189,8 +225,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.01646614, y: 0}
   serializedVersion: 2
+<<<<<<<< HEAD:TheSlimeAlchemist/Assets/Prefabs/Characters/Don't use.prefab
   m_Radius: 0.8
 --- !u!50 &1380298165025116555
 Rigidbody2D:
@@ -220,17 +257,22 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &3004347448228435507
+========
+  m_Radius: 2.4923306
+--- !u!114 &2223997928596262490
+>>>>>>>> Rain5:TheSlimeAlchemist/Assets/Prefabs/Characters/Pu.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5653582463080123678}
+  m_GameObject: {fileID: 8255972085865942116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 207c8d1f7b4be48c98e85040da21e1fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 37c764fc22fea40df9d2a8f30ecee436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<<< HEAD:TheSlimeAlchemist/Assets/Prefabs/Characters/Don't use.prefab
   inputDirection: {x: 0, y: 0}
   jumpButton: 0
 --- !u!114 &893303582881284270
@@ -273,3 +315,6 @@ MonoBehaviour:
   mainDatabase: {fileID: 11400000, guid: 6e4d8921966324bab8c287bf7ab440ff, type: 2}
   respawnPoint: {x: 0, y: 0, z: 0}
   gameLevelManager: {fileID: 0}
+========
+  speed: 10
+>>>>>>>> Rain5:TheSlimeAlchemist/Assets/Prefabs/Characters/Pu.prefab
