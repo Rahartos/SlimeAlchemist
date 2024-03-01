@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("ENEMY"))
         {
             touchedFire = true;
             Respawn();
