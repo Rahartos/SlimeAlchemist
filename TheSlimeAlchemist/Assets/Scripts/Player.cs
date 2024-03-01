@@ -16,10 +16,19 @@ public class Player : MonoBehaviour
     public bool gotCoin = false;
     public bool metOxy = false;
     public bool touchedFire = false;
+    public bool reachedDoor = false;
 
+    // for next scene
+    private GameObject levelManager;
+    public string nextScene;
 
     void Start()
     {
+        levelManager = GameObject.FindWithTag("GameController");
+        if (levelManager != null)
+        {
+            Debug.Log("Found levelManager: " + levelManager.name);
+        }
         // initial respawn point is start position of player
         respawnPoint = transform.position;
 
@@ -34,6 +43,8 @@ public class Player : MonoBehaviour
         {
             metOxy = true;
             Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
+            //Debug.Log("metOxy: " + metOxy);
+
             if (other != null)
             {
                 var item = other.GetComponent<Item>();
@@ -49,6 +60,7 @@ public class Player : MonoBehaviour
         {
             gotCoin = true;
             Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
+
             if (other != null)
             {
                 var item = other.GetComponent<Item>();
@@ -74,11 +86,23 @@ public class Player : MonoBehaviour
             
         }
 
+        if (other.gameObject.CompareTag("Door"))
+        {
+            Debug.Log("Reached door");
+            reachedDoor = true;
+
+        }
+
     }
 
     void Respawn()
     {
         transform.position = respawnPoint;
+    }
+
+    public void NextScene()
+    {
+        levelManager.GetComponent<LevelManager>().OpenScene(nextScene);
     }
      
 
