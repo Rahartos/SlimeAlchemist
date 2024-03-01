@@ -15,7 +15,7 @@ public class Flag : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("True!");
+            //Debug.Log("True!");
             render.sprite = greenflag;
         }
     }

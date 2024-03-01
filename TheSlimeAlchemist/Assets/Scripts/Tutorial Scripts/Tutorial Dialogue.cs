@@ -6,11 +6,11 @@ using TMPro;
 public class TutorialDialogue : MonoBehaviour
 {
    public TextMeshProUGUI dialogue;
-    public string[] lines;
 
     private int currentLine = 0;
     private bool initalDialogue = false;
     private bool secondDialogue = false;
+
 
     private string[] initialLines = {   "You are a slime in a petri dish!",
                                 "Use the arrow keys to move and spacebar to jump...",
@@ -18,16 +18,23 @@ public class TutorialDialogue : MonoBehaviour
                                 "Collect your first slime!"
                              };
 
-    private string[] metSlimeLines = {  "You collected your first slime: Oxygen!",
-                                "To put out the fire below, go to the shop and buy another Hydrogen slime...",
+    private string[] metSlimeLines = {  "To put out the fire below, go to the shop and buy another Hydrogen slime...",
                                 "To make a compound, water!"
                             };
 
-// Start is called before the first frame update
-void Start()
+    private GameObject player;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        dialogue.text = "Welcome to The Slime Alchemist!";   
+        player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            // Debug.Log("Found player: " + player.name);
+        }
+        dialogue.text = "Welcome to The Slime Alchemist!";
         StartDialogue();
+
     }
 
 
@@ -49,10 +56,19 @@ void Start()
             }
         }
 
+        if(player.GetComponent<Player>() != null && player.GetComponent<Player>().metOxy)
+        {
+            MetSlime();
+            dialogue.text = "You collected your first slime: Oxygen!";
+            player.GetComponent<Player>().metOxy = false;
+
+        }
+
         if (Input.GetKeyDown(KeyCode.Z) && secondDialogue)
         {
             if (currentLine < metSlimeLines.Length)
             {
+                // Debug.Log("following texts...");
                 dialogue.text = metSlimeLines[currentLine];
                 currentLine++;
             }
@@ -63,7 +79,6 @@ void Start()
                 secondDialogue = false;
             }
         }
-
     }
 
     public void StartDialogue()
@@ -76,6 +91,7 @@ void Start()
     {
         secondDialogue = true;
         currentLine = 0;
+        // Debug.Log("currentLine: " + currentLine + ", metSlimesLines: " + metSlimeLines.Length);
     }
 }
 

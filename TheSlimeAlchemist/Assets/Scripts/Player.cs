@@ -11,71 +11,83 @@ public class Player : MonoBehaviour
 
     // for respawning
     public Vector3 respawnPoint;
-    public LevelManager gameLevelManager;
+
+    // for the tutorial dialogue
+    public bool gotCoin = false;
+    public bool metOxy = false;
+    public bool touchedFire = false;
+
 
     void Start()
     {
+        // initial respawn point is start position of player
         respawnPoint = transform.position;
+
         // playerAnimation = GetComponent<Animator>();
-        gameLevelManager = GetComponent<LevelManager>();
 
     }
 
 
-         void OnTriggerEnter2D(Collider2D other) {
-            if (other.gameObject.CompareTag("Item"))
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Item"))
+        {
+            metOxy = true;
+            Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
+            if (other != null)
             {
-                Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
-                if (other != null)
+                var item = other.GetComponent<Item>();
+                if (item)
                 {
-                    var item = other.GetComponent<Item>();
-                    if (item)
-                    {
-                        inventory.AddItem(item.item, 1);
-                        Destroy(other.gameObject);
-                    }
+                    inventory.AddItem(item.item, 1);
+                    Destroy(other.gameObject);
                 }
             }
-
-            if (other.gameObject.CompareTag("Coin"))
-            {
-                Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
-                if (other != null)
-                {
-                    var item = other.GetComponent<Item>();
-                    if (item)
-                    {
-                        inventory.AddCoinAmount(1);
-                        Destroy(other.gameObject);
-                    }
-
-                }
-            }
-
-            // if (other.gameObject.CompareTag("Enemy")) {
-            //     // if slime hits an enemy,
-            //     // 1. decrease health
-            //     // abc...
-            //     // 2. and if healthy reaches 0, respawn?
-            //     // if health < 0
-            //     gameLevelManager.Respawn();
-
-            // }
-
-            // if (other.gameObject.CompareTag("Checkpoint"))
-            // {
-            //     respawnPoint = transform.position;
-            // }
-
         }
 
-        void OnApplicationQuit() {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            gotCoin = true;
+            Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
+            if (other != null)
+            {
+                var item = other.GetComponent<Item>();
+                if (item)
+                {
+                    inventory.AddCoinAmount(1);
+                    Destroy(other.gameObject);
+                }
+
+            }
+        }
+
+        if (other.gameObject.CompareTag("ENEMY"))
+        {
+            touchedFire = true;
+            Respawn();
+        }
+
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            Debug.Log("Respawn point: " + transform.position);
+            respawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+            
+        }
+
+    }
+
+    void Respawn()
+    {
+        transform.position = respawnPoint;
+    }
+     
+
+        void OnApplicationQuit()
+        {
             inventory.Container.Clear();
             inventory.coinAmount = 10;
             partyinventory.Container.Clear();
 
             mainDatabase.ResetInPartyValues();
         }
-
-    
 }

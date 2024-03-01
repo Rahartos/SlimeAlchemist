@@ -5,12 +5,13 @@ using UnityEngine;
 public class Lasers : MonoBehaviour
 {
     private Renderer objectRenderer;
+    public Collider2D colliderToToggle;
     private bool isVisible = true;
 
     void Start()
     {
         objectRenderer = GetComponent<Renderer>();
-        InvokeRepeating("ToggleVisibility", 0f, 1f);
+        InvokeRepeating("ToggleVisibility", 0f, 1.5f);
         Debug.Log("start");
     }
     void Update(){
@@ -20,6 +21,11 @@ public class Lasers : MonoBehaviour
     {
         isVisible = !isVisible;
         objectRenderer.enabled = isVisible;
+        if (colliderToToggle != null)
+        {
+            // Toggle the collider's enabled state
+            colliderToToggle.enabled = !colliderToToggle.enabled;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
