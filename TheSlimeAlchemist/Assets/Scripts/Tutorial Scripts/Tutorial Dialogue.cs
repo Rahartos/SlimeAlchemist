@@ -9,7 +9,9 @@ public class TutorialDialogue : MonoBehaviour
 
     private int currentLine = 0;
     private bool initalDialogue = false;
-    private bool secondDialogue = false;
+    private bool slimeDialogue = false;
+    private bool coinDialogue = false;     
+    private bool fireDialogue = false;
     private bool lastDialogue = false;
 
 
@@ -68,7 +70,7 @@ public class TutorialDialogue : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) && secondDialogue)
+        if (Input.GetKeyDown(KeyCode.Z) && slimeDialogue)
         {
             if (currentLine < metSlimeLines.Length)
             {
@@ -80,10 +82,44 @@ public class TutorialDialogue : MonoBehaviour
             {
                 // End of dialogue
                 dialogue.text = "";
-                secondDialogue = false;
+                slimeDialogue = false;
             }
         }
 
+        // Coin Dialogue after getting coin
+        if (player.GetComponent<Player>() != null && player.GetComponent<Player>().gotCoin)
+        {
+            Debug.Log("Got Coin!");
+            GotCoin();
+            dialogue.text = "You got a coin! You can use coins to buy more slimes!";
+            player.GetComponent<Player>().gotCoin = false;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z) && coinDialogue)
+        {
+                // End of dialogue
+                dialogue.text = "";
+                coinDialogue = false;
+        }
+
+        // Fire Dialogue after touching flame
+        if (player.GetComponent<Player>() != null && player.GetComponent<Player>().touchedFire)
+        {
+            Debug.Log("Touched Fure!");
+            TouchedFire();
+            dialogue.text = "Oh no! You touched the fire: whenever you die, you will be respawned to the last respawn point.";
+            player.GetComponent<Player>().touchedFire = false;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z) && fireDialogue)
+        {
+            // End of dialogue
+            dialogue.text = "";
+            coinDialogue = false;
+        }
+       
         // Last Dialogue after reaching door
         if (player.GetComponent<Player>() != null && player.GetComponent<Player>().reachedDoor)
         {
@@ -109,10 +145,23 @@ public class TutorialDialogue : MonoBehaviour
 
     public void MetSlime()
     {
-        secondDialogue = true;
+        slimeDialogue = true;
         currentLine = 0;
         Debug.Log("currentLine: " + currentLine + ", metSlimesLines: " + metSlimeLines.Length);
     }
+
+    public void GotCoin()
+    {
+        coinDialogue = true;
+        currentLine = 0;
+    }
+
+    public void TouchedFire()
+    {
+        fireDialogue = true;
+        currentLine = 0;
+    }
+
 
     public void ReachedDoor()
     {
