@@ -7,6 +7,8 @@ TagManager:
   - Coin
   - Item
   - EnemyDespond
+  - EnemyLi
+  - ENEMY
   layers:
   - Default
   - TransparentFX
