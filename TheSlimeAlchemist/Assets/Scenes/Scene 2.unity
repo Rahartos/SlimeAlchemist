@@ -479,6 +479,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 800834074993384775, guid: 5d4e8c7eb89bc45ba912460a2341c813, type: 3}
+      propertyPath: metOxy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800834074993384775, guid: 5d4e8c7eb89bc45ba912460a2341c813, type: 3}
       propertyPath: nextScene
       value: Scene 3
       objectReference: {fileID: 0}
