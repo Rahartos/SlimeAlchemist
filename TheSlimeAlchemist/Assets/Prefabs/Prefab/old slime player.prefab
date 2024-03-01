@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 1041700680498498299}
   - component: {fileID: 8048502078140355866}
   m_Layer: 0
-  m_Name: Slime_Player
+  m_Name: old slime player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
