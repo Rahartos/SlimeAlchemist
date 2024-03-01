@@ -478,6 +478,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 800834074993384775, guid: 5d4e8c7eb89bc45ba912460a2341c813, type: 3}
+      propertyPath: nextScene
+      value: Scene 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 800834074993384775, guid: 5d4e8c7eb89bc45ba912460a2341c813, type: 3}
+      propertyPath: reachedDoor
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5653582463080123678, guid: 5d4e8c7eb89bc45ba912460a2341c813, type: 3}
       propertyPath: m_Name
       value: Slime_Player
@@ -3899,7 +3907,7 @@ GameObject:
   - component: {fileID: 1498163125}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
