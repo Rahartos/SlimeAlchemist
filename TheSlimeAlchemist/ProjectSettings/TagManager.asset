@@ -10,6 +10,7 @@ TagManager:
   - EnemyLi
   - ENEMY
   - Door
+  - Audio
   layers:
   - Default
   - TransparentFX

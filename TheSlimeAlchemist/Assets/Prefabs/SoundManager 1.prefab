@@ -53,7 +53,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Exit
     clip: {fileID: 8300000, guid: 8657391c09bb51e4fb047537f83733d9, type: 3}
-    volume: 0.445
+    volume: 0.405
     pitch: 0
     loop: 0
     source: {fileID: 0}

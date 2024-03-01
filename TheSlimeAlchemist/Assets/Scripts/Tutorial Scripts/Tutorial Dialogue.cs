@@ -33,7 +33,7 @@ public class TutorialDialogue : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
-            Debug.Log("Found player: " + player.name);
+           // Debug.Log("Found player: " + player.name);
         }
         dialogue.text = "Welcome to The Slime Alchemist!";
         StartDialogue();
@@ -63,7 +63,7 @@ public class TutorialDialogue : MonoBehaviour
         // Second Dialogue after meeting Oxygen
         if(player.GetComponent<Player>() != null && player.GetComponent<Player>().metOxy)
         {
-            Debug.Log("MetSlime!");
+            //Debug.Log("MetSlime!");
             MetSlime();
             dialogue.text = "You collected your first slime: Oxygen!";
             player.GetComponent<Player>().metOxy = false;
