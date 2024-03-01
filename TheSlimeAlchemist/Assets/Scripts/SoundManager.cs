@@ -7,16 +7,21 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public Sounds[] sounds;
+
     public static AudioManager instance;
 
     void Start()
     {
-        // Play("ThemeSound");
+        Play("BGM");
     }
 
     
     void Awake()
     {
+
+        // makes audio manager persist between scenes
+        DontDestroyOnLoad(gameObject);
+
         if (instance == null)
         {
             instance = this;
@@ -27,8 +32,6 @@ public class AudioManager : MonoBehaviour
 
         }
 
-        // makes audio manager persist between scenes
-        DontDestroyOnLoad(gameObject);
 
         foreach (Sounds s in sounds)
         {
