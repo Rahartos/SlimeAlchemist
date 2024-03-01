@@ -11,9 +11,7 @@ public class Player : MonoBehaviour
 
     // for respawning
     public Vector3 respawnPoint;
-<<<<<<< Updated upstream
     public LevelManager gameLevelManager;
-=======
 
     public ItemObject myItem;
 
@@ -26,7 +24,6 @@ public class Player : MonoBehaviour
     // for next scene
     private GameObject levelManager;
     public string nextScene;
->>>>>>> Stashed changes
 
     public string scene;
 
@@ -90,7 +87,7 @@ public class Player : MonoBehaviour
         }
 
         void OnApplicationQuit() {
-            //inventory.Container.Clear();
+            inventory.Container.Clear();
             inventory.coinAmount = 10;
             partyinventory.Container.Clear();
 

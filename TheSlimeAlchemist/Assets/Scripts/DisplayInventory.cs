@@ -169,7 +169,7 @@ public class DisplayInventory : MonoBehaviour
             //If the inventory is hidden, and if the player clicks on the slimes in the party
             //there should swap out with the SLIME GUY playable character
             if(_item != null){
-                currentPlayer.playerAssign(_item);
+                //currentPlayer.playerAssign(_item);
 
             }
         }

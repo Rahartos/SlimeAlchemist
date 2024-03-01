@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.R)) {
 			RestartTheGame ();
 		}
+
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+		}
 	}
 		
 	/// <summary>

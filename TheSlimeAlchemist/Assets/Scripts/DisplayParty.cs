@@ -99,16 +99,4 @@ public class DisplayParty : MonoBehaviour
     }
 }
 
-
-    public void reCreate(){
-        foreach (Transform child in transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        itemsDisplayed.Clear();
-    }
-
-    
-
 }
