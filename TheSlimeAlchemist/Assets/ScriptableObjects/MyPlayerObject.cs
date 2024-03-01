@@ -18,20 +18,32 @@ public class PlayerObject : MonoBehaviour
 
    void Start(){
         //player = GetComponentsInChildren<GameObject>();
-        obj = Instantiate(player, this.transform);
+        obj = Instantiate(player);
+        transform.position = obj.transform.position;
         
    }
 
    void Update(){
-    if(player!= swapPlayer){
+        //transform.position = obj.transform.position;
+    
+        if ((Input.GetKeyDown(KeyCode.Alpha1)) && (partyInventory.Container.Count >= 1)){
+            swapPlayer = partyInventory.Container[0].item.playableCharacter;
+
+        } else if ((Input.GetKeyDown(KeyCode.Alpha2)) &&(partyInventory.Container.Count >= 2)){
+            swapPlayer = partyInventory.Container[1].item.playableCharacter;
+
+        } else if ((Input.GetKeyDown(KeyCode.Alpha3)) &&(partyInventory.Container.Count >= 3)){
+            swapPlayer = partyInventory.Container[2].item.playableCharacter;
+        }
+
+        if(player!= swapPlayer){
+            transform.position = obj.transform.position;
         player = swapPlayer;
         Destroy(obj);
-        obj = Instantiate(player, this.transform);
-
-        if ((Input.GetKeyDown(KeyCode.Exclaim)) &&(partyInventory.Container[i].item.playableCharacter != null)){
-
+        obj = Instantiate(player, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+        
         }
-    }
+    
    }
 
    public void playerAssign(ItemObject item){
@@ -42,20 +54,4 @@ public class PlayerObject : MonoBehaviour
     return player;
    }
 
-//    public void MakeParty(){
-//     for (int i = 0; i < partyInventory.Container.Count; i++)
-//         {
-//             var obj = Instantiate(inventory.Container[i].item.prefab, this.transform);
-//             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-
-//             Image itemImage = obj.GetComponentsInChildren<Image>()[1];
-//             if (itemImage != null)
-//             {
-//                 itemImage.sprite = inventory.Container[i].item.icon;
-//             }
-
-//             // Use the item ID as the key
-//             itemsDisplayed.Add(inventory.Container[i].ID, obj);
-//         }
-//    }
 }
