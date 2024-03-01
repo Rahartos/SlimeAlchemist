@@ -11,7 +11,22 @@ public class Player : MonoBehaviour
 
     // for respawning
     public Vector3 respawnPoint;
+<<<<<<< Updated upstream
     public LevelManager gameLevelManager;
+=======
+
+    public ItemObject myItem;
+
+    // for the tutorial dialogue
+    public bool gotCoin = false;
+    public bool metOxy = false;
+    public bool touchedFire = false;
+    public bool reachedDoor = false;
+
+    // for next scene
+    private GameObject levelManager;
+    public string nextScene;
+>>>>>>> Stashed changes
 
     public string scene;
 
@@ -77,7 +92,7 @@ public class Player : MonoBehaviour
         void OnApplicationQuit() {
             //inventory.Container.Clear();
             inventory.coinAmount = 10;
-            //partyinventory.Container.Clear();
+            partyinventory.Container.Clear();
 
             mainDatabase.ResetInPartyValues();
         }

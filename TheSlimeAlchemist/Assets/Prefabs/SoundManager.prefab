@@ -26,7 +26,11 @@ Transform:
   m_GameObject: {fileID: 7852526479877632428}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream:TheSlimeAlchemist/Assets/Prefabs/SoundManager.prefab
   m_LocalPosition: {x: 1128, y: 684.5, z: 0}
+=======
+  m_LocalPosition: {x: 1127.9999, y: 684.49994, z: 0}
+>>>>>>> Stashed changes:TheSlimeAlchemist/Assets/Prefabs/SoundManager 1.prefab
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,6 +51,7 @@ MonoBehaviour:
   sounds:
   - name: 
     clip: {fileID: 8300000, guid: 51e884cb48ae20c4d92810f82f708306, type: 3}
+<<<<<<< Updated upstream:TheSlimeAlchemist/Assets/Prefabs/SoundManager.prefab
     volume: 0
     pitch: 0
   - name: 
@@ -61,3 +66,33 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 92c524f9e046b9544acf5c42892b3035, type: 3}
     volume: 0
     pitch: 0
+=======
+    volume: 0.41
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Exit
+    clip: {fileID: 8300000, guid: 8657391c09bb51e4fb047537f83733d9, type: 3}
+    volume: 0.415
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: New Game
+    clip: {fileID: 8300000, guid: b73c28b8c2ad44f418a503f274f4dd9d, type: 3}
+    volume: 0.415
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bump
+    clip: {fileID: 8300000, guid: 92c524f9e046b9544acf5c42892b3035, type: 3}
+    volume: 0.492
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BGM
+    clip: {fileID: 8300000, guid: aa8d76b9ce8be314ab02c0d1c48fa378, type: 3}
+    volume: 0.173
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+>>>>>>> Stashed changes:TheSlimeAlchemist/Assets/Prefabs/SoundManager 1.prefab
