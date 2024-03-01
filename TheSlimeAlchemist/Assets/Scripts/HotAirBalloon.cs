@@ -28,12 +28,13 @@ public class HotAirBalloon : MonoBehaviour
     }
 
     // When the player collides with another object
-    void OnCollisionEnter(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+        //***CHANGE THIS PART OF THE CODE TO COMPARE WHEN IT IS A HELIUM SLIME***//
+        //if (collision.gameObject.CompareTag("Player")) 
+        //{
             // Start moving up
             isMovingUp = true;
-        }
+        //}
     }
 }
