@@ -14,6 +14,7 @@ public class TutorialDialogue : MonoBehaviour
     private bool fireDialogue = false;
     private bool lastDialogue = false;
 
+    AudioSource audio;
 
     private string[] initialLines = {   "You are a slime in a petri dish!",
                                 "Use the arrow keys to move and spacebar to jump...",
@@ -30,6 +31,7 @@ public class TutorialDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
@@ -47,6 +49,7 @@ public class TutorialDialogue : MonoBehaviour
         // First Dialogue
         if (Input.GetKeyDown(KeyCode.Z) && initalDialogue)
         {
+            audio.Play();
             if (currentLine < initialLines.Length)
             {
                 dialogue.text = initialLines[currentLine];
@@ -72,6 +75,7 @@ public class TutorialDialogue : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z) && slimeDialogue)
         {
+            audio.Play();
             if (currentLine < metSlimeLines.Length)
             {
                 Debug.Log("following texts...");
@@ -98,8 +102,9 @@ public class TutorialDialogue : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z) && coinDialogue)
         {
-                // End of dialogue
-                dialogue.text = "";
+            audio.Play();
+            // End of dialogue
+            dialogue.text = "";
                 coinDialogue = false;
         }
 
@@ -115,6 +120,7 @@ public class TutorialDialogue : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z) && fireDialogue)
         {
+            audio.Play();
             // End of dialogue
             dialogue.text = "";
             coinDialogue = false;
@@ -132,6 +138,7 @@ public class TutorialDialogue : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && lastDialogue)
         {
+            audio.Play();
             // Go to next level
             player.GetComponent<Player>().NextScene();
         }

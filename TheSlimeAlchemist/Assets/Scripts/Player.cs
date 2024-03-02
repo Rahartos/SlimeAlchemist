@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public bool touchedFire = false;
     public bool reachedDoor = false;
 
+    AudioSource audio;
+
     // for next scene
     private GameObject levelManager;
     public string nextScene;
@@ -31,6 +33,8 @@ public class Player : MonoBehaviour
         }
         // initial respawn point is start position of player
         respawnPoint = transform.position;
+
+        audio = GetComponent<AudioSource>();
 
         // playerAnimation = GetComponent<Animator>();
 
@@ -58,6 +62,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("Coin"))
         {
+            audio.Play();
             gotCoin = true;
             Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
 
