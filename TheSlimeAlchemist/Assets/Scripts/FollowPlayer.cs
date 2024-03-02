@@ -12,6 +12,7 @@ public class FollowPlayer : MonoBehaviour
     public Vector2 xLimit;
     public Vector2 yLimit;
 
+
     public void Awake(){
         targetPlayer = GameObject.FindGameObjectWithTag("Player").transform;
     }
