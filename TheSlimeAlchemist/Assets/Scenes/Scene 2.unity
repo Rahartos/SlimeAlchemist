@@ -2138,6 +2138,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: MyBeautifulGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8125177617195145261, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125177617195145261, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125177617195145261, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125177617195145261, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125177617195145261, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125177617195145261, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
