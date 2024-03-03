@@ -8,6 +8,9 @@ TagManager:
   - Item
   - EnemyDespond
   - ENEMY
+  - Door
+  - EnemyLi
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Puase
   - 
   - 
   - 
