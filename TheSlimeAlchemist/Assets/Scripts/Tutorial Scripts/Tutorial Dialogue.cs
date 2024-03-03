@@ -22,8 +22,9 @@ public class TutorialDialogue : MonoBehaviour
                                 "Collect your first slime!"
                              };
 
-    private string[] metSlimeLines = {  "To put out the fire below, go to the shop and buy another Hydrogen slime...",
-                                "To make a compound, water!"
+    private string[] metSlimeLines = {  "Click 'I' to see your inventory, and 'P' to see your party of slimes!"
+                                "You can also switch between slime characters using the keys '1', '2', and '3'.",
+                                "Click the slimes to add them to your party!",
                             };
 
     private GameObject player;
