@@ -61,7 +61,7 @@ public class BasicEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            Instantiate(explosion, transform.position, transform.rotation);
+            //Instantiate(explosion, transform.position, transform.rotation);
             healthBarScript.TakeDamage(10);
           
         }
