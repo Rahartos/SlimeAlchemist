@@ -19,7 +19,7 @@ public class DestroyObjectAndChildren : MonoBehaviour
 
         Debug.Log(myText);
 
-        int number = int.Parse(myText);
+        //int number = int.Parse(myText);
 
         //if(number <=1){
             // Destroy all children of the current GameObject

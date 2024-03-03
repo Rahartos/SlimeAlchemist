@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: CraftingINV
   m_EditorClassIdentifier: 
   savePath: 
-  database: {fileID: 0}
+  database: {fileID: 11400000, guid: 6e4d8921966324bab8c287bf7ab440ff, type: 2}
   coins: {fileID: 0}
   coinAmount: 0
-  Container: []
+  Container:
+  - item: {fileID: 11400000, guid: 639bfea54f3314e45956473e554406c4, type: 2}
+    amount: 3
+    ID: 1
+  - item: {fileID: 11400000, guid: 05f377528a9df4a2e8d00e05e15b4993, type: 2}
+    amount: 5
+    ID: 8
   maxSlimes: 5

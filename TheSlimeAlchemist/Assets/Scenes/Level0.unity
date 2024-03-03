@@ -1462,6 +1462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MyBeautifulGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2937400881285125593, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1392483906, guid: 50bf6e4055fae445e950560482160ce1, type: 3}
     - target: {fileID: 3014700333916812909, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
@@ -1491,6 +1495,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5045706097880522109, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045706097880522109, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045706097880522109, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4522705
       objectReference: {fileID: 0}
@@ -1504,11 +1516,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5045706097880522109, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 275
+      value: 350.23923
       objectReference: {fileID: 0}
     - target: {fileID: 5045706097880522109, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167
+      value: 182.96649
       objectReference: {fileID: 0}
     - target: {fileID: 8125177617195145261, guid: 3399caa28c96245c1bb630b0aa441ce1, type: 3}
       propertyPath: m_AnchorMax.y

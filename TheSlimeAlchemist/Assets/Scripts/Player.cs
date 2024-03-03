@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("Coin"))
         {
-            audio.Play();
+            //audio.Play();
             gotCoin = true;
             Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
 
