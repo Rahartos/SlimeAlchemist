@@ -15,6 +15,7 @@ public abstract class ItemObject : ScriptableObject{
     public Sprite icon;
     public GameObject prefab;
     public GameObject shopPrefab;
+    public GameObject MixingPrefab;
     public GameObject playableCharacter;
     public ItemType type;
     [TextArea(15,20)]
