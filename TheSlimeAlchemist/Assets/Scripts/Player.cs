@@ -11,9 +11,6 @@ public class Player : MonoBehaviour
 
     // for respawning
     public Vector3 respawnPoint;
-    public LevelManager gameLevelManager;
-
-    public ItemObject myItem;
 
     // for the tutorial dialogue
     public bool gotCoin = false;
@@ -21,78 +18,105 @@ public class Player : MonoBehaviour
     public bool touchedFire = false;
     public bool reachedDoor = false;
 
+    AudioSource audio;
+
     // for next scene
     private GameObject levelManager;
     public string nextScene;
 
-    public string scene;
-
     void Start()
     {
+        levelManager = GameObject.FindWithTag("GameController");
+        if (levelManager != null)
+        {
+            Debug.Log("Found levelManager: " + levelManager.name);
+        }
+        // initial respawn point is start position of player
         respawnPoint = transform.position;
+
+        audio = GetComponent<AudioSource>();
+
         // playerAnimation = GetComponent<Animator>();
-        gameLevelManager = GetComponent<LevelManager>();
 
     }
 
 
-         void OnTriggerEnter2D(Collider2D other) {
-            if (other.gameObject.CompareTag("Item"))
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Item"))
+        {
+            metOxy = true;
+            Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
+            //Debug.Log("metOxy: " + metOxy);
+
+            if (other != null)
             {
-                Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
-                if (other != null)
+                var item = other.GetComponent<Item>();
+                if (item)
                 {
-                    var item = other.GetComponent<Item>();
-                    if (item)
-                    {
-                        inventory.AddItem(item.item, 1);
-                        Destroy(other.gameObject);
-                    }
+                    inventory.AddItem(item.item, 1);
+                    Destroy(other.gameObject);
                 }
             }
+        }
 
-            if (other.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            audio.Play();
+            gotCoin = true;
+            Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
+
+            if (other != null)
             {
-                Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
-                if (other != null)
+                var item = other.GetComponent<Item>();
+                if (item)
                 {
-                    var item = other.GetComponent<Item>();
-                    if (item)
-                    {
-                        inventory.AddCoinAmount(1);
-                        Destroy(other.gameObject);
-                    }
-
+                    inventory.AddCoinAmount(1);
+                    Destroy(other.gameObject);
                 }
+
             }
+        }
 
-             if (other.gameObject.CompareTag("ENEMY")) {
-            //     // if slime hits an enemy,
-            //     // 1. decrease health
-            //     // abc...
-            //     // 2. and if healthy reaches 0, respawn?
-            //     // if health < 0
-            //gameLevelManager.Respawn();
-            
+        if (other.gameObject.CompareTag("ENEMY"))
+        {
+            touchedFire = true;
+            Respawn();
+        }
 
-            //gameLevelManager.OpenScene(scene);
-
-             }
-
-            // if (other.gameObject.CompareTag("Checkpoint"))
-            // {
-            //     respawnPoint = transform.position;
-            // }
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            Debug.Log("Respawn point: " + transform.position);
+            respawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
 
         }
 
-        void OnApplicationQuit() {
-            inventory.Container.Clear();
-            inventory.coinAmount = 10;
-            partyinventory.Container.Clear();
+        if (other.gameObject.CompareTag("Door"))
+        {
+            Debug.Log("Reached door");
+            reachedDoor = true;
 
-            mainDatabase.ResetInPartyValues();
         }
 
-    
+    }
+
+    void Respawn()
+    {
+        transform.position = respawnPoint;
+    }
+
+    public void NextScene()
+    {
+        levelManager.GetComponent<LevelManager>().OpenScene(nextScene);
+    }
+
+
+    void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
+        inventory.coinAmount = 10;
+        partyinventory.Container.Clear();
+
+        mainDatabase.ResetInPartyValues();
+    }
 }
