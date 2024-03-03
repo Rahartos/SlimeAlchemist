@@ -452,7 +452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7221383315159237405, guid: 64ace0c2843e6d349b0a9a2415c674e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: ShopScreen
+      value: MixingScene
       objectReference: {fileID: 0}
     - target: {fileID: 7221383315159237405, guid: 64ace0c2843e6d349b0a9a2415c674e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
