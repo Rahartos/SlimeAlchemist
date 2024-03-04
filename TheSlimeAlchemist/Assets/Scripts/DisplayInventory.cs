@@ -68,6 +68,7 @@ public class DisplayInventory : MonoBehaviour
 
             // Use the item ID as the key
             itemsDisplayed.Add(inventory.Container[i].ID, obj);
+            obj.SetActive(!transparencyToggled);
         }
     }
 

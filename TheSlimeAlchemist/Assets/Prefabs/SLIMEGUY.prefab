@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.29, y: -4.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.682012, y: 0.682012, z: 0.682012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8895890117076269510, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
   swapPlayer: {fileID: 7631673789583863534, guid: 7c73ca534903a4664b9724fc344fb5ae, type: 3}
+  partyInventory: {fileID: 0}

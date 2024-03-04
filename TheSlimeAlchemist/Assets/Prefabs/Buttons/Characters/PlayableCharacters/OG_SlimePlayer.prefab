@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8282867296900273914}
   m_Layer: 0
   m_Name: OG_SlimePlayer
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,10 +204,8 @@ MonoBehaviour:
   partyinventory: {fileID: 11400000, guid: ae7d73cfc27364f488a45621da1c4d0f, type: 2}
   mainDatabase: {fileID: 11400000, guid: 6e4d8921966324bab8c287bf7ab440ff, type: 2}
   respawnPoint: {x: 0, y: 0, z: 0}
-  myItem: {fileID: 11400000, guid: 639bfea54f3314e45956473e554406c4, type: 2}
   gotCoin: 0
   metOxy: 0
   touchedFire: 0
   reachedDoor: 0
   nextScene: 
-  scene: 
