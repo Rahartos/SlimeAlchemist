@@ -23,6 +23,7 @@ public class SetVelocityController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (jump && isGrounded)
             Jump();
     }
@@ -47,7 +48,9 @@ public class SetVelocityController : MonoBehaviour
     {
         RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, groundDetectionRange, groundLayers);
 
-        isGrounded = (groundHit.collider != null && rb.velocity.y <= 0);
+        Debug.Log("Player Down Velocity:" + rb.velocity.y);
+
+        isGrounded = (groundHit.collider != null && rb.velocity.y <= 0 && rb.velocity.y >= -1);
     }
 
     void MovementBehaviour()

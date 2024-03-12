@@ -157,7 +157,7 @@ MonoBehaviour:
   jumpForce: 10
   deaccelerationMultiplier: 0.75
   isGrounded: 1
-  groundDetectionRange: 3
+  groundDetectionRange: 0.2
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
