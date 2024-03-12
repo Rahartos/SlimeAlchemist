@@ -21,7 +21,7 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         targetPlayer = GameObject.FindGameObjectWithTag("Player2").transform;
-        Debug.Log("Player: " + targetPlayer);
+        //Debug.Log("Player: " + targetPlayer);
         Vector3 targetPosition = targetPlayer.position + offset;
         targetPosition = new Vector3(Mathf.Clamp(targetPosition.x, xLimit.x, xLimit.y), Mathf.Clamp(targetPosition.y, yLimit.x, yLimit.y), -10);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);

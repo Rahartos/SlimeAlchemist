@@ -47,6 +47,7 @@ public class TutorialDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.FindWithTag("Player2");
         // First Dialogue
         if (Input.GetKeyDown(KeyCode.Z) && initalDialogue)
         {
@@ -65,7 +66,7 @@ public class TutorialDialogue : MonoBehaviour
         }
 
         // Second Dialogue after meeting Oxygen
-        if(player.GetComponent<Player>() != null && player.GetComponent<Player>().metOxy)
+        if(/*player.GetComponent<Player>() != null &&*/ player.GetComponent<Player>().metOxy)
         {
             //Debug.Log("MetSlime!");
             MetSlime();
@@ -92,7 +93,7 @@ public class TutorialDialogue : MonoBehaviour
         }
 
         // Coin Dialogue after getting coin
-        if (player.GetComponent<Player>() != null && player.GetComponent<Player>().gotCoin)
+        if (/*player.GetComponent<Player>() != null &&*/ player.GetComponent<Player>().gotCoin)
         {
             Debug.Log("Got Coin!");
             GotCoin();

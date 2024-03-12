@@ -111,12 +111,12 @@ public class Player : MonoBehaviour
     }
 
 
-    void OnApplicationQuit()
-    {
-        inventory.Container.Clear();
-        inventory.coinAmount = 10;
-        partyinventory.Container.Clear();
+    // void OnApplicationQuit()
+    // {
+    //     inventory.Container.Clear();
+    //     inventory.coinAmount = 10;
+    //     partyinventory.Container.Clear();
 
-        mainDatabase.ResetInPartyValues();
-    }
+    //     mainDatabase.ResetInPartyValues();
+    // }
 }

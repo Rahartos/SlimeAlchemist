@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8895890117076269510, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
   swapPlayer: {fileID: 7631673789583863534, guid: 7c73ca534903a4664b9724fc344fb5ae, type: 3}
-  partyInventory: {fileID: 0}
+  partyInventory: {fileID: 11400000, guid: ae7d73cfc27364f488a45621da1c4d0f, type: 2}
