@@ -10,20 +10,12 @@ public class DisplayInventoryMixing : MonoBehaviour
     public InventoryObject inventory;
     public InventoryObject partyInventory;
 
-    public int X_SPACE_BETWEEN_ITEM;
-    public int NUMBER_OF_COLUMN;
-    public int Y_SPACE_BETWEEN_ITEMS;
-    public int X_START;
-    public int Y_START;
-    
     // Change the dictionary to be more flexible
     static Dictionary<int, GameObject> itemsDisplayed = new Dictionary<int, GameObject>();
 
 
     private static bool playInvOut;
     private Image parentImage;
-
-    public  PlayerObject currentPlayer;
 
     void Start()
     {
@@ -90,13 +82,13 @@ public class DisplayInventoryMixing : MonoBehaviour
     
 
     public void AddToParty(SlimeObject _item){
-        Debug.Log("CURRENT OUT STATUS" + playInvOut);
+        //Debug.Log("CURRENT OUT STATUS" + playInvOut);
 
 
         
             if (_item != null && inventory.Container.Any(slot => slot.item == _item))
         {
-            Debug.Log("Adding to Player INV");
+            //Debug.Log("Adding to Player INV");
             InventorySlot inventorySlot = inventory.Container.Find(slot => slot.item == _item);
             
 
@@ -120,11 +112,11 @@ public class DisplayInventoryMixing : MonoBehaviour
             }
 
             // // Debug.Log items and keys from the dictionary
-             Debug.Log("Dictionary Contents:");
+            //  Debug.Log("Dictionary Contents:");
 
-             foreach (var kvp in itemsDisplayed){
-                 Debug.Log($"Key: {kvp.Key}, Item: {kvp.Value}");
-            }
+            //  foreach (var kvp in itemsDisplayed){
+            //      Debug.Log($"Key: {kvp.Key}, Item: {kvp.Value}");
+            // }
             
         }else if (_item != null && partyInventory.Container.Any(slot => slot.item == _item)){
             Debug.Log("Adding to PARTY INV");

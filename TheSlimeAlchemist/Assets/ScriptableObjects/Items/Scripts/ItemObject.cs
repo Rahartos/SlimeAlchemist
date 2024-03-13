@@ -24,5 +24,6 @@ public abstract class ItemObject : ScriptableObject{
 
     public bool hasBeenFound;
     public int price;
+    public List<string> recipeList = new List<string>();
 
 }
