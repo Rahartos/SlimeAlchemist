@@ -8,7 +8,8 @@ using System.Linq;
 public class MixingDisplay : MonoBehaviour
 {
     public InventoryObject mixingInventory;
-    //public InventoryObject inventory;
+    public InventoryObject inventory;
+    public InventoryObject recipeInventory;
 
     static List<GameObject> childSlots = new List<GameObject>();
     static Dictionary<int, GameObject> itemsDisplayed = new Dictionary<int, GameObject>();
@@ -19,53 +20,142 @@ public class MixingDisplay : MonoBehaviour
 
     void Start()
     {
+        childSlots.Clear();
+        ResetMixingInventory();
+
         // Iterate through all children of the parent object
         foreach (Transform child in transform)
         {
-            // Check if the child has an Image component
-            GameObject myChild = child.GetComponent<GameObject>();
-            if (myChild != null)
+             childSlots.Add(child.gameObject);      
+        }
+        Debug.Log(childSlots.Count);
+    }
+
+    void Update(){
+        
+        for (int i = 0; (i < childSlots.Count) && (i < mixingInventory.Container.Count); i++){
+            // Check if the item is present in the mixing inventory and has a positive amount
+            if (mixingInventory.Container[i].item != null && mixingInventory.Container[i].amount > 0)
             {
-                // Add the Image component to the list
-                childSlots.Add(myChild);
+                // Check if the item is already displayed
+                if (!itemsDisplayed.ContainsKey(i)){
+                    // Instantiate the icon and set it as a child of the corresponding child slot
+                    GameObject obj = Instantiate(icon, childSlots[i].transform);
+                    Image itemImage = obj.GetComponent<Image>(); // Get the Image component of the instantiated icon
+                    obj.GetComponentInChildren<TextMeshProUGUI>().text = mixingInventory.Container[i].amount.ToString("n0");
+                    
+                    if (itemImage != null)
+                    {
+                        itemImage.sprite = mixingInventory.Container[i].item.icon;
+                    }
+
+                    // Add the instantiated icon to the dictionary with the corresponding index
+                    itemsDisplayed.Add(i, obj);
+                } else{
+
+                    itemsDisplayed[i].GetComponentInChildren<TextMeshProUGUI>().text = mixingInventory.Container[i].amount.ToString("n0");
+
+                }
             }
+            
+      
         }
     }
 
-    void Update()
-{
-    for (int i = 0; i < mixingInventory.Container.Count && i < childSlots.Count; i++)
-    {
-        // Check if the item is present in the mixing inventory and has a positive amount
-        if (mixingInventory.Container[i].item != null && mixingInventory.Container[i].amount > 0)
+    public void ResetMixingInventory(){
+        // Move items from mixing inventory to inventory
+        foreach (InventorySlot slot in mixingInventory.Container)
         {
-            // Check if the item is already displayed
-            if (!itemsDisplayed.ContainsKey(i))
-            {
-                // Instantiate the icon and set it as a child of the corresponding child slot
-                GameObject obj = Instantiate(icon, childSlots[i].transform);
-                Image itemImage = obj.GetComponent<Image>(); // Get the Image component of the instantiated icon
-                
-                if (itemImage != null)
-                {
-                    itemImage.sprite = mixingInventory.Container[i].item.icon;
+            inventory.AddItem(slot.item, slot.amount); // Add item to inventory
+        }
+        mixingInventory.Container.Clear(); // Clear mixing inventory
+
+
+
+        // Clear the dictionary
+        foreach (var kvp in itemsDisplayed)
+        {
+            Destroy(kvp.Value); // Destroy the displayed item GameObject
+        }
+        itemsDisplayed.Clear(); // Clear the dictionary
+
+    }
+
+    public void MixRecipe(){
+        //recipes could be a dictionary of items and combo codes
+
+        for (int i = 0;i < mixingInventory.Container.Count; i++){
+            int tempAmount = mixingInventory.Container[i].amount;
+
+            Debug.Log("temp amount " + tempAmount);
+
+            while(tempAmount>=1){
+                recipes.Add(mixingInventory.Container[i].item.displayName);
+                tempAmount--;
+            }
+
+        }
+
+        //Debugging purposes
+
+        //after mixing, remove the items from the mixing inventory and 
+        //add mixed slime to the players inventory if there is a match
+        //maybe add a popup screen?
+        //if recipe does not match, will get a notification that the mixing has failed
+
+        //Maybe add a price for each time you "mix"
+
+        //check through each of the recipes?
+        for (int i = 0; i < recipeInventory.Container.Count; i++){
+
+            Debug.Log("enterLoop");
+
+            //check if there is the right amount of ingredients
+            if(recipes.Count == recipeInventory.Container[i].item.recipeList.Count){
+
+                List<string> templist = new List<string>();           
+                foreach (string name in recipeInventory.Container[i].item.recipeList){
+                    templist.Add(name);
+                    Debug.Log("Recipe name" + i +" "+ name);
                 }
 
-                // Add the instantiated icon to the dictionary with the corresponding index
-                itemsDisplayed.Add(i, obj);
-            }
+                foreach (string name in recipes){
+                    if(templist.Contains(name)){
+                        templist.Remove(name);
+                    }
+                }
+
+                //DEBUG
+                foreach (string name in templist){
+                    Debug.Log("temp item " + name);
+                    
+                }
+                
+                //if all the items match, add the crafted item to the player's inventory
+                if(templist.Count == 0){
+                    inventory.AddItem(recipeInventory.Container[i].item, 1); 
+                }else{
+                    Debug.Log("MIXING FAILED HAHA");
+                }
+
+            }             
         }
-        else
+
+        mixingInventory.Container.Clear(); // Clear mixing inventory
+        // Clear the dictionary
+        foreach (var kvp in itemsDisplayed)
         {
-            // If the item is not present or has a zero amount, remove it from the displayed items
-            if (itemsDisplayed.ContainsKey(i))
-            {
-                Destroy(itemsDisplayed[i]); // Destroy the icon GameObject
-                itemsDisplayed.Remove(i); // Remove the entry from the dictionary
-            }
+            Destroy(kvp.Value); // Destroy the displayed item GameObject
         }
+        itemsDisplayed.Clear(); // Clear the dictionary
+
     }
-}
+    
+    void OnApplicationQuit(){
+        ResetMixingInventory();
+    }
+
+
 
 
     //  int iconCounter = 0;
