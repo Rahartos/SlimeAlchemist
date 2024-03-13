@@ -48,9 +48,9 @@ public class SetVelocityController : MonoBehaviour
     {
         RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, groundDetectionRange, groundLayers);
 
-        Debug.Log("Player Down Velocity:" + rb.velocity.y);
+        //Debug.Log("Player Down Velocity:" + rb.velocity.y);
 
-        isGrounded = (groundHit.collider != null && rb.velocity.y <= 0 && rb.velocity.y >= -1);
+        isGrounded = (groundHit.collider != null && rb.velocity.y <= 0);
     }
 
     void MovementBehaviour()

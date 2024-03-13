@@ -8,6 +8,8 @@ public class ItemInfoDis : MonoBehaviour
 {
     private static TextMeshProUGUI[] textComponents;
     public static SlimeObject selectedSlime;
+
+    private static Image itemImage;
     public SlimeObject badSlime;
 
     public InventoryObject playerinventory;
@@ -16,7 +18,9 @@ public class ItemInfoDis : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        itemImage = GetComponentsInChildren<Image>()[1];
         selectedSlime = badSlime;
+        itemImage.sprite = selectedSlime.icon;
 
         textComponents = GetComponentsInChildren<TextMeshProUGUI>();
 
@@ -72,6 +76,7 @@ public class ItemInfoDis : MonoBehaviour
         TextMeshProUGUI fourthText = textComponents[3];
         fourthText.text = "   ";
         enab = true;
+        itemImage.sprite = selectedSlime.icon;
     }
 
     public void BuySlime(){
