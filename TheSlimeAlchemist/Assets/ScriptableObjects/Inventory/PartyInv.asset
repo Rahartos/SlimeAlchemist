@@ -16,8 +16,5 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 6e4d8921966324bab8c287bf7ab440ff, type: 2}
   coins: {fileID: 11400000, guid: e94efc528b97c4ca3b70ae9454506ed1, type: 2}
   coinAmount: 0
-  Container:
-  - item: {fileID: 11400000, guid: 639bfea54f3314e45956473e554406c4, type: 2}
-    amount: 1
-    ID: 1
-  maxSlimes: 1
+  Container: []
+  maxSlimes: 3
