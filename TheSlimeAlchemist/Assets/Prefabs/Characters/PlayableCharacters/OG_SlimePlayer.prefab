@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8657156731539814094}
   - component: {fileID: 7117028545548558819}
   - component: {fileID: 8282867296900273914}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OG_SlimePlayer
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ MonoBehaviour:
   jumpForce: 10
   deaccelerationMultiplier: 0.75
   isGrounded: 1
-  groundDetectionRange: 0.2
+  groundDetectionRange: 1
   groundLayers:
     serializedVersion: 2
     m_Bits: 1

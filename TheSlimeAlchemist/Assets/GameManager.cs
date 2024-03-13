@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
-		partyinventory.AddItem(mainDatabase.GetItem[1], 1);
+		inventory.AddItem(mainDatabase.GetItem[1], 1);
 		
 	}
 

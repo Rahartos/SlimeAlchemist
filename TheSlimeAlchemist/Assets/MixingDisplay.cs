@@ -10,7 +10,7 @@ public class MixingDisplay : MonoBehaviour
     public InventoryObject mixingInventory;
     //public InventoryObject inventory;
 
-    public List<GameObject> childSlots = new List<GameObject>();
+    static List<GameObject> childSlots = new List<GameObject>();
     static Dictionary<int, GameObject> itemsDisplayed = new Dictionary<int, GameObject>();
 
     void Start()
