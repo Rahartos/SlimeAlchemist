@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     private GameObject levelManager;
     public string nextScene;
     public GameObject canvas;
+    static GameObject tempCanvas;
 
     void Start()
     {
@@ -56,7 +57,11 @@ public class Player : MonoBehaviour
             {
                 var item = other.GetComponent<Item>();
                 if (item)
-                {
+                {   
+                    //Vector2 spawnPos = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 0.5f));
+                    //tempCanvas = Instantiate(canvas, spawnPos, Quaternion.identity);
+                    //Debug.Log(tempCanvas);
+                    //tempCanvas.GetComponent<DisplayPopup>().CreatePopup(item.item);
                     inventory.AddItem(item.item, 1);
                     Destroy(other.gameObject);
                 }
