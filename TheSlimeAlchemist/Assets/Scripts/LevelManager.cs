@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
 {
 
     public float respawnDelay;
+    static string previousScene;
+    static string currentScene; 
 
     private Transform spawnPoint;
     private Transform playerPos;
@@ -14,10 +16,12 @@ public class LevelManager : MonoBehaviour
     private Player player;
 
     private AudioSource audioSource;
+    
 
 
     void Awake()
     {
+        previousScene = SceneManager.GetActiveScene ().name;
         // makes audio manager persist between scenes
         //DontDestroyOnLoad(gameObject);
 
@@ -37,7 +41,14 @@ public class LevelManager : MonoBehaviour
 
     public void OpenScene(string levelName)
     {
+        previousScene = SceneManager.GetActiveScene ().name;
         SceneManager.LoadScene(levelName);
+
+    }
+
+    public void OpenPrevScene()
+    {
+        SceneManager.LoadScene(previousScene);
 
     }
 

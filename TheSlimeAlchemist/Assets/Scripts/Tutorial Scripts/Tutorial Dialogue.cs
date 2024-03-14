@@ -8,11 +8,13 @@ public class TutorialDialogue : MonoBehaviour
    public TextMeshProUGUI dialogue;
 
     private int currentLine = 0;
-    private bool initalDialogue = false;
-    private bool slimeDialogue = false;
-    private bool coinDialogue = false;     
-    private bool fireDialogue = false;
-    private bool lastDialogue = false;
+    private static bool initalDialogue = false;
+    private static bool slimeDialogue = false;
+    private static bool coinDialogue = false;     
+    private static bool fireDialogue = false;
+    private static bool lastDialogue = false;
+
+    private static bool popupEnabled = true;
 
     AudioSource audio;
 
