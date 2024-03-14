@@ -25,5 +25,7 @@ MonoBehaviour:
   inParty: 0
   hasBeenFound: 1
   price: 5
+  recipeList:
+  - Oxygen
   ability: None
   rarity: 0

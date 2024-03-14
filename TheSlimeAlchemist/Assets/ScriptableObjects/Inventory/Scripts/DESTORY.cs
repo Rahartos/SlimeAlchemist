@@ -17,7 +17,7 @@ public class DestroyObjectAndChildren : MonoBehaviour
 
         string myText = transform.GetComponentInChildren<TextMeshProUGUI>().text;
 
-        Debug.Log(myText);
+        //Debug.Log(myText);
 
         //int number = int.Parse(myText);
 

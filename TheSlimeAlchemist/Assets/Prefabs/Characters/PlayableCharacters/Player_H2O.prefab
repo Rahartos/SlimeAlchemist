@@ -13,6 +13,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 635972099, guid: da8a792ef445043598c6f07394711ddb, type: 3}
     - target: {fileID: 7646194950364129999, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7646194950364129999, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7646194950364129999, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -52,9 +60,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8282867296900273914, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
+      propertyPath: ability
+      value: WATER
+      objectReference: {fileID: 0}
     - target: {fileID: 8895890117076269510, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
       propertyPath: m_Name
       value: Player_H2O
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895890117076269510, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895890117076269510, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
+      propertyPath: m_TagString
+      value: Player2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

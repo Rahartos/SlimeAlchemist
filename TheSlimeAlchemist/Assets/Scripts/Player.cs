@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public bool touchedFire = false;
     public bool reachedDoor = false;
 
+    public string ability;
+
     AudioSource audio;
 
     // for next scene
@@ -80,8 +82,12 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("ENEMY"))
         {
-            touchedFire = true;
-            Respawn();
+            if(ability == "WATER"){
+                Destroy(other.gameObject);
+            }else{
+                touchedFire = true;
+                Respawn();
+                 }
         }
 
         if (other.gameObject.CompareTag("Respawn"))

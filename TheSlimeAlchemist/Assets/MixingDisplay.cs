@@ -15,11 +15,16 @@ public class MixingDisplay : MonoBehaviour
     static Dictionary<int, GameObject> itemsDisplayed = new Dictionary<int, GameObject>();
 
     public GameObject icon;
+    public GameObject popUpWindow;
+
+    private GameObject obj;
+    private bool popUP = false;
 
     static List<string> recipes = new List<string>();
 
     void Start()
     {
+        recipes.Clear();
         childSlots.Clear();
         ResetMixingInventory();
 
@@ -28,7 +33,7 @@ public class MixingDisplay : MonoBehaviour
         {
              childSlots.Add(child.gameObject);      
         }
-        Debug.Log(childSlots.Count);
+        //Debug.Log(childSlots.Count);
     }
 
     void Update(){
@@ -96,6 +101,10 @@ public class MixingDisplay : MonoBehaviour
 
         }
 
+        foreach (string name in recipes){
+                Debug.Log("recipe item inv: " + name);
+                }
+
         //Debugging purposes
 
         //after mixing, remove the items from the mixing inventory and 
@@ -130,14 +139,20 @@ public class MixingDisplay : MonoBehaviour
                     Debug.Log("temp item " + name);
                     
                 }
-                
+
                 //if all the items match, add the crafted item to the player's inventory
                 if(templist.Count == 0){
+                    CreatePopup(recipeInventory.Container[i].item);
                     inventory.AddItem(recipeInventory.Container[i].item, 1); 
+                    
                 }else{
                     Debug.Log("MIXING FAILED HAHA");
-                }
+                    CreatePopup(null);
+                }     
 
+            }else{
+                    Debug.Log("MIXING FAILED HAHA??");
+                    CreatePopup(null);
             }             
         }
 
@@ -148,6 +163,27 @@ public class MixingDisplay : MonoBehaviour
             Destroy(kvp.Value); // Destroy the displayed item GameObject
         }
         itemsDisplayed.Clear(); // Clear the dictionary
+         recipes.Clear(); //clear recipe list
+
+    }
+
+    void CreatePopup(ItemObject selectedSlime){
+        
+        obj = Instantiate(popUpWindow, transform);
+        TextMeshProUGUI[] textComponents = obj.GetComponentsInChildren<TextMeshProUGUI>();
+        Image itemImage = obj.GetComponentsInChildren<Image>()[2];
+
+        TextMeshProUGUI firstText = textComponents[0];
+        TextMeshProUGUI secondText = textComponents[1];
+
+        if(selectedSlime != null){
+            firstText.text = selectedSlime.displayName;
+            secondText.text = selectedSlime.description;
+            itemImage.sprite = selectedSlime.icon;
+        }else{
+            firstText.text = "FAILURE!";
+            secondText.text = "This is a useless slime that will be sacrificed to the biohazard bin.";
+        }
 
     }
     

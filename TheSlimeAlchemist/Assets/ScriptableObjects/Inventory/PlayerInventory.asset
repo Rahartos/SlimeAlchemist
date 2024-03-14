@@ -15,6 +15,6 @@ MonoBehaviour:
   savePath: 
   database: {fileID: 11400000, guid: 6e4d8921966324bab8c287bf7ab440ff, type: 2}
   coins: {fileID: 11400000, guid: e94efc528b97c4ca3b70ae9454506ed1, type: 2}
-  coinAmount: 270
+  coinAmount: 10
   Container: []
   maxSlimes: 24

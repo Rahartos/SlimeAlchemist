@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 9
   displayName: H2O
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  icon: {fileID: 635972099, guid: da8a792ef445043598c6f07394711ddb, type: 3}
+  prefab: {fileID: 5690699862830839153, guid: 8ee92cba2d29a4344acd9345ecdc6182, type: 3}
   shopPrefab: {fileID: 0}
-  MixingPrefab: {fileID: 0}
-  playableCharacter: {fileID: 0}
+  MixingPrefab: {fileID: 3852307610285919394, guid: 444acb9648f5e49b8b1d721d3db3f2ad, type: 3}
+  playableCharacter: {fileID: 8118526202579977801, guid: 6322acff4113d4cc38e83bf7deecf80a, type: 3}
   type: 0
   description: Just add water!
   inParty: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
   price: 100
   recipeList:
   - Hydrogen
+  - Hydrogen
   - Oxygen
-  - Oxygen
-  ability: 
+  ability: WATER
   rarity: 0

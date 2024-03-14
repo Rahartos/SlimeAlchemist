@@ -24,5 +24,7 @@ MonoBehaviour:
   inParty: 0
   hasBeenFound: 1
   price: 5
+  recipeList:
+  - Hydrogen
   ability: None
   rarity: 0.999
