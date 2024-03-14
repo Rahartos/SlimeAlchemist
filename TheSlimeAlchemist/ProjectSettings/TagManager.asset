@@ -13,6 +13,7 @@ TagManager:
   - Audio
   - Player2
   - WATER
+  - Respawn2
   layers:
   - Default
   - TransparentFX

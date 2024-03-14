@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        previousScene = SceneManager.GetActiveScene ().name;
+        //previousScene = SceneManager.GetActiveScene ().name;
         // makes audio manager persist between scenes
         //DontDestroyOnLoad(gameObject);
 
@@ -37,6 +37,23 @@ public class LevelManager : MonoBehaviour
         }
         */
     }
+
+    void Update(){
+		if (Input.GetKeyDown (KeyCode.R)) {
+			
+		}
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+		}
+        if (Input.GetKeyDown (KeyCode.M)) {
+            OpenScene("MixingScene");
+			
+		}
+        if (Input.GetKeyDown (KeyCode.O)) {
+            OpenScene("ShopScreen");
+			
+		}
+	}
 
 
     public void OpenScene(string levelName)
@@ -57,9 +74,6 @@ public class LevelManager : MonoBehaviour
         //gameObject = Find("LevelManager").GetComponent<LevelManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-                
-    }
+
+    
 }

@@ -18,12 +18,13 @@ MonoBehaviour:
   prefab: {fileID: 2057348923865728621, guid: 98c9a6b010f5442beb906a86f2e120a0, type: 3}
   shopPrefab: {fileID: 8338454572726013825, guid: 3cc590766ced84d9985a42cf3395d7f6, type: 3}
   MixingPrefab: {fileID: 3292660745796177749, guid: 2ed25d73de89a4db3b4f90ca9026e9f3, type: 3}
-  playableCharacter: {fileID: 0}
+  playableCharacter: {fileID: 3212991746980902939, guid: 3040b5a010f084151a0adcc1a72f3dc2, type: 3}
   type: 0
   description: Helium is a floating friend that hovers gracefully. Its high-pitched
     giggle is contagious, and it loves to lift other slimes' spirits.
   inParty: 0
   hasBeenFound: 0
   price: 15
-  ability: None
+  recipeList: []
+  ability: FLY
   rarity: 0.999
