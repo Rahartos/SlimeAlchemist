@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     // for next scene
     private GameObject levelManager;
     public string nextScene;
+    public GameObject canvas;
 
     void Start()
     {
