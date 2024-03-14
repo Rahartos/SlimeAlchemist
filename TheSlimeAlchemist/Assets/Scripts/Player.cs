@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
 
     }
 
-    void Respawn()
+    public void Respawn()
     {
         transform.position = respawnPoint;
     }
