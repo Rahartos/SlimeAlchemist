@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public bool touchedFire = false;
     public bool reachedDoor = false;
 
+    AudioSource audio;
+
     // for next scene
     private GameObject levelManager;
     public string nextScene;
@@ -31,6 +33,8 @@ public class Player : MonoBehaviour
         }
         // initial respawn point is start position of player
         respawnPoint = transform.position;
+
+        audio = GetComponent<AudioSource>();
 
         // playerAnimation = GetComponent<Animator>();
 
@@ -58,6 +62,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("Coin"))
         {
+            //audio.Play();
             gotCoin = true;
             Debug.Log("Hit object: " + other.GetComponent<Collider2D>().gameObject.name);
 
@@ -83,7 +88,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Respawn point: " + transform.position);
             respawnPoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
-            
+
         }
 
         if (other.gameObject.CompareTag("Door"))
@@ -104,14 +109,14 @@ public class Player : MonoBehaviour
     {
         levelManager.GetComponent<LevelManager>().OpenScene(nextScene);
     }
-     
 
-        void OnApplicationQuit()
-        {
-            inventory.Container.Clear();
-            inventory.coinAmount = 10;
-            partyinventory.Container.Clear();
 
-            mainDatabase.ResetInPartyValues();
-        }
+    // void OnApplicationQuit()
+    // {
+    //     inventory.Container.Clear();
+    //     inventory.coinAmount = 10;
+    //     partyinventory.Container.Clear();
+
+    //     mainDatabase.ResetInPartyValues();
+    // }
 }

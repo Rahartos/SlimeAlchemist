@@ -17,6 +17,8 @@ MonoBehaviour:
   icon: {fileID: 1273755176, guid: 89853e6e1f4d242859d6525aa0b04fef, type: 3}
   prefab: {fileID: 4087303082529960337, guid: 05f694497946d41a98d9558a3fc08d6e, type: 3}
   shopPrefab: {fileID: 2562606560274248099, guid: 06ea9319d5b514454b7d1b7a3605893d, type: 3}
+  MixingPrefab: {fileID: 4548111241860572487, guid: 483b08220071e46a5b687ad6fa3adcd7, type: 3}
+  playableCharacter: {fileID: 7631673789583863534, guid: 7c73ca534903a4664b9724fc344fb5ae, type: 3}
   type: 0
   description: Oxygen is essential for life and quite common. This slime is lively
     and playful, always eager to explore its surroundings

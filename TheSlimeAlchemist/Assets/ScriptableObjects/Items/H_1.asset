@@ -17,6 +17,8 @@ MonoBehaviour:
   icon: {fileID: 227422505, guid: 89853e6e1f4d242859d6525aa0b04fef, type: 3}
   prefab: {fileID: 7522030042281651572, guid: afc944e3fcf86474ebc2c2236e20b72d, type: 3}
   shopPrefab: {fileID: 878323521378064639, guid: 6e0183847826649ab9e56f9293fe421c, type: 3}
+  MixingPrefab: {fileID: 7522030042281651572, guid: 22603b2ce740e4202a6204cd39b04d24, type: 3}
+  playableCharacter: {fileID: 8895890117076269510, guid: bf83436a8ef12476f88a6daf89d99b99, type: 3}
   type: 0
   description: The most common and essential slime.
   inParty: 0

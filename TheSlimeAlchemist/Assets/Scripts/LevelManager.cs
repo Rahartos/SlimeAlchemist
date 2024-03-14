@@ -13,16 +13,37 @@ public class LevelManager : MonoBehaviour
 
     private Player player;
 
+    private AudioSource audioSource;
+
+
+    void Awake()
+    {
+        // makes audio manager persist between scenes
+        //DontDestroyOnLoad(gameObject);
+
+        /*
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        */
+    }
+
 
     public void OpenScene(string levelName)
     {
         SceneManager.LoadScene(levelName);
+
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-       
+        //gameObject = Find("LevelManager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame

@@ -7,9 +7,10 @@ TagManager:
   - Coin
   - Item
   - EnemyDespond
-  - EnemyLi
   - ENEMY
   - Door
+  - EnemyLi
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Puase
   - 
   - 
   - 
