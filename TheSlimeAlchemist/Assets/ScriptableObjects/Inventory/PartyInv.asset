@@ -17,4 +17,4 @@ MonoBehaviour:
   coins: {fileID: 11400000, guid: e94efc528b97c4ca3b70ae9454506ed1, type: 2}
   coinAmount: 0
   Container: []
-  maxSlimes: 3
+  maxSlimes: 2

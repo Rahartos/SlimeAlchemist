@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 		}
-        if (Input.GetKeyDown (KeyCode.M)) {
+        if (Input.GetKeyDown (KeyCode.M) && (SceneManager.GetActiveScene ().name != "MixingScene") && (SceneManager.GetActiveScene ().name != "ShopScreen")) {
             OpenScene("MixingScene");
 			
 		}
