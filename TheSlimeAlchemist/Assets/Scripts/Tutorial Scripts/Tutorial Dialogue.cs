@@ -14,6 +14,9 @@ public class TutorialDialogue : MonoBehaviour
     private static bool fireDialogue = false;
     private static bool lastDialogue = false;
 
+    private static bool firstCoin = false;
+
+    private int fireCount = 0;
     private static bool popupEnabled = true;
 
     AudioSource audio;
@@ -24,7 +27,8 @@ public class TutorialDialogue : MonoBehaviour
                                 "Collect your first slime!"
                              };
 
-    private string[] metSlimeLines = {  "Click 'I' to see your inventory, and 'P' to see your party of slimes!",
+    private string[] metSlimeLines = {  "Oxygen alone has no special abilities, but you might be able to make a new slime with it!",
+                                "Click 'I' to see your inventory, and 'P' to see your party of slimes!",
                                 "You can also switch between slime characters using the keys '1', '2', and '3'.",
                                 "Click the slimes to add them to your party!",
                             };
@@ -99,7 +103,11 @@ public class TutorialDialogue : MonoBehaviour
         {
             Debug.Log("Got Coin!");
             GotCoin();
-            dialogue.text = "You got a coin! You can use coins to buy more slimes!";
+            if (firstCoin == false)
+            {
+                dialogue.text = "You got a coin! Once you collect a slime you can use coins to buy more from the shop!";
+                firstCoin = true;
+            }
             player.GetComponent<Player>().gotCoin = false;
 
         }
@@ -117,7 +125,16 @@ public class TutorialDialogue : MonoBehaviour
         {
             Debug.Log("Touched Fure!");
             TouchedFire();
-            dialogue.text = "Oh no! You touched the fire: whenever you die, you will be respawned to the last respawn point.";
+            fireCount++;
+            if (fireCount == 1){
+                dialogue.text = "Oh no! You touched the fire: whenever you die, you will be respawned to the last respawn point.";
+            }
+            else if (fireCount == 2){
+                dialogue.text = "You need a different slime to put out the fire, the H2O slime might be able to help.";
+            }
+            else{
+                dialogue.text = "Here’s a hint: Press (M) to open the mixing lab and combine slimes H + H + O to create your first mixture!";
+            }
             player.GetComponent<Player>().touchedFire = false;
 
         }
