@@ -96,6 +96,16 @@ public class Player : MonoBehaviour
                  }
         }
 
+        if (other.gameObject.CompareTag("WATER"))
+        {
+            if(ability == "WATER"){
+                //Destroy(other.gameObject);
+            }else{
+                //touchedFire = true;
+                Respawn();
+             }
+        }
+
         if (other.gameObject.CompareTag("Respawn"))
         {
             Debug.Log("Respawn point: " + transform.position);
@@ -107,6 +117,8 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Reached door");
             reachedDoor = true;
+            levelManager.GetComponent<LevelManager>().UnlockScene();
+            levelManager.GetComponent<LevelManager>().OpenScene("MenuScreen");
 
         }
 

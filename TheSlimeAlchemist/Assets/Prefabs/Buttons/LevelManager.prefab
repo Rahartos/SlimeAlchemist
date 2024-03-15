@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6765644720312956223}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnDelay: 0
-  gamePlayer: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 62608df57a4624d63840c5e729cd3ac4, type: 2}
+  partyinventory: {fileID: 11400000, guid: ae7d73cfc27364f488a45621da1c4d0f, type: 2}
+  mainDatabase: {fileID: 11400000, guid: 6e4d8921966324bab8c287bf7ab440ff, type: 2}

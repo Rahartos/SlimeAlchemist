@@ -14,6 +14,7 @@ TagManager:
   - Player2
   - WATER
   - Respawn2
+  - NPC
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using UnityEngine.SceneManagement;
 
 /// </summary>
@@ -42,14 +43,14 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 
-	void OnApplicationQuit()
-    {
-        inventory.Container.Clear();
-        inventory.coinAmount = 10;
-        partyinventory.Container.Clear();
+	// void OnApplicationQuit()
+    // {
+    //     inventory.Container.Clear();
+    //     inventory.coinAmount = 10;
+    //     partyinventory.Container.Clear();
 
-        mainDatabase.ResetInPartyValues();
-    }
+    //     mainDatabase.ResetInPartyValues();
+    // }
 
 }
 

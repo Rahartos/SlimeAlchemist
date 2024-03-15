@@ -24,7 +24,7 @@ MonoBehaviour:
     This slime is small but full of energy, with a sparkly personality that shines
     brightly.
   inParty: 0
-  hasBeenFound: 1
+  hasBeenFound: 0
   price: 40
   recipeList: []
   ability: None
